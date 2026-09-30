@@ -6,7 +6,8 @@
 <description>Veille technologique quotidienne : développement Java, architecture hexagonale, diagrammes C4.</description>
 <language>fr</language>
 <atom:link href="https://pogauh.github.io/veille_technologique/feed.xml" rel="self" type="application/rss+xml"/>
-<lastBuildDate>Thu, 01 Jan 1970 05:30:00 +0000</lastBuildDate>
-
+<lastBuildDate>Wed, 30 Sep 2026 05:30:00 +0000</lastBuildDate>
+<item><title>Synthèse du 2026-09-30</title><link>https://pogauh.github.io/veille_technologique/#2026-09-30</link><guid isPermaLink="false">synthese-2026-09-30</guid><pubDate>Wed, 30 Sep 2026 05:30:00 +0000</pubDate><category>Synthèse</category><description>&lt;p&gt;Journée calme. Le point hebdomadaire Spring recense une vague de jalons (Boot 4.2.0 M2, Security 7.2.0-M2, Data, Batch) et aucune correction de sécurité. Rien de nouveau n&amp;#x27;a pu être vérifié en source primaire sur les thèmes hexagonal et C4 dans la fenêtre.&lt;/p&gt;</description></item>
+<item><title>[Java] Point hebdomadaire Spring : jalons Boot 4.2.0 M2, Security 7.2.0-M2 et Batch 6.1.0-M2</title><link>https://spring.io/blog/2026/09/29/this-week-in-spring-september-29th-2026</link><guid isPermaLink="false">563d1b3840614c346d644f3e2a59546481248e64</guid><pubDate>Wed, 30 Sep 2026 05:00:00 +0000</pubDate><category>Java</category><category>spring.io</category><description>&lt;p&gt;La lettre hebdomadaire de Josh Long liste les jalons publiés les 24 et 25 septembre : Spring Boot 4.2.0 M2 (bundles SSL pour LDAP/LDAPS, conventions sémantiques OpenTelemetry, configuration de l&amp;#x27;endpoint OTLP), Spring Security 7.2.0-M2, Spring Data 2026.1.0-M2, Spring Batch 6.1.0-M2 et Spring Cloud 2026.0.0-M1. Aucune correction de sécurité n&amp;#x27;y est mentionnée.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Pourquoi c&#x27;est important :&lt;/strong&gt; Permet d&amp;#x27;anticiper la prochaine version mineure de Boot et de Security avant sa sortie finale.&lt;/p&gt;&lt;p&gt;&lt;em&gt;Action suggérée : &lt;strong&gt;surveiller&lt;/strong&gt; · Source : spring.io · Publié le 2026-09-29 · Confiance : élevée&lt;/em&gt;&lt;/p&gt;</description></item>
 </channel>
 </rss>
