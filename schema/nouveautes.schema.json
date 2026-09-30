@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nouveautés de la veille du jour",
+  "description": "Fichier data/nouveautes.json écrit par l'agent. Seul scripts/fusion.py le lit.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["date", "resume_du_jour", "items"],
+  "properties": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date du jour de la veille (AAAA-MM-JJ)."
+    },
+    "resume_du_jour": {
+      "type": "string",
+      "maxLength": 1200,
+      "description": "Synthèse de 3 à 5 lignes. Chaîne vide s'il n'y a rien de notable."
+    },
+    "items": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["titre", "url", "source", "date_publication", "theme", "resume", "importance", "confiance"],
+        "properties": {
+          "titre": { "type": "string", "minLength": 5, "maxLength": 200 },
+          "url": { "type": "string", "pattern": "^https?://" },
+          "source": { "type": "string", "minLength": 2, "maxLength": 80, "description": "Nom du site (ex. inside.java)." },
+          "date_publication": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "theme": { "enum": ["java", "hexagonal", "c4", "securite"] },
+          "resume": { "type": "string", "minLength": 20, "maxLength": 700 },
+          "importance": { "type": "string", "minLength": 10, "maxLength": 300 },
+          "action": { "enum": ["migrer", "tester", "lire", "surveiller", "corriger"] },
+          "confiance": { "enum": ["elevee", "moyenne", "faible"] }
+        }
+      }
+    }
+  }
+}
