@@ -1,1 +1,87 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Veille Java / Architecture hexagonale / C4</title><link rel="alternate" type="application/rss+xml" href="https://pogauh.github.io/veille_technologique/feed.xml"><style>body{font:16px/1.5 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem}h3{margin:1.2rem 0 .2rem}.tag{font-size:.7em;background:#e8eefc;border-radius:4px;padding:.1em .5em}.resume{background:#f5f5f5;padding:.6rem .8rem;border-radius:6px}article{margin-bottom:1rem}@media(prefers-color-scheme:dark){body{background:#111;color:#ddd}a{color:#8ab4f8}.resume{background:#1e1e1e}.tag{background:#26324d}}</style></head><body><h1>Veille Java / Architecture hexagonale / C4</h1><p><a href="feed.xml">Flux RSS</a></p><section id="2026-10-02"><h2>2026-10-02</h2><p class="resume">Journée calme côté Java, hexagonal et C4 : aucune release majeure vérifiée dans la fenêtre. Deux avis de sécurité à sévérité élevée touchent jackson-core (DoS) ; les correctifs sont disponibles dans les branches 2.18, 2.21, 2.22 et 3.x.</p><article><h3><span class="tag">Sécurité</span> <a href="https://github.com/advisories/GHSA-7hhh-6rmp-j9qf">jackson-core : consommation mémoire non bornée dans UTF8DataInputJsonParser (DoS)</a></h3><p>CVE-2026-89425, gravité haute (CVSS 7.5). Le parseur DataInput construit le message d&#x27;erreur d&#x27;un jeton invalide sans respecter maxErrorTokenLength, d&#x27;où un risque d&#x27;OutOfMemoryError. Concerne jackson-core 2.8.0 à 2.18.10, 2.19.0 à 2.21.6, 2.22.0 à 2.22.2 et tools.jackson.core 3.x ; corrigé en 2.18.11, 2.21.7, 2.22.3, 3.1.7 et 3.2.3. L&#x27;avis a été publié upstream le 22/09 et référencé par GitHub le 01/10.</p><p><strong>Pourquoi c'est important :</strong> Jackson est présent dans presque toutes les applications Spring : le risque de déni de service justifie une montée de version.</p><p><em>Action suggérée : <strong>corriger</strong> · Source : GitHub Security Advisories · Publié le 2026-10-01 · Confiance : élevée</em></p></article><article><h3><span class="tag">Sécurité</span> <a href="https://github.com/advisories/GHSA-p6pp-m3f8-5c89">jackson-core : ReDoS quadratique dans NumberInput.PATTERN_FLOAT</a></h3><p>CVE-2026-89407, gravité haute (CVSS 7.5). L&#x27;expression régulière de lecture des flottants a un comportement quadratique sur certaines entrées, et la limite appliquée est maxStringLength (20 M de caractères) plutôt que maxNumberLength. Concerne jackson-core 2.17.0 à 2.18.10, 2.19.0 à 2.21.6, 2.22.0 à 2.22.2 et 3.0.0 à 3.2.1 ; corrigé en 2.18.11, 2.21.7, 2.22.3, 3.1.7 et 3.2.2. Avis publié upstream le 22/09.</p><p><strong>Pourquoi c'est important :</strong> Quelques requêtes JSON forgées peuvent saturer les threads d&#x27;un service exposé ; à traiter avec le correctif précédent.</p><p><em>Action suggérée : <strong>corriger</strong> · Source : GitHub Security Advisories · Publié le 2026-10-01 · Confiance : élevée</em></p></article></section><section id="2026-09-30"><h2>2026-09-30</h2><p class="resume">Journée calme. Le point hebdomadaire Spring recense une vague de jalons (Boot 4.2.0 M2, Security 7.2.0-M2, Data, Batch) et aucune correction de sécurité. Rien de nouveau n&#x27;a pu être vérifié en source primaire sur les thèmes hexagonal et C4 dans la fenêtre.</p><article><h3><span class="tag">Java</span> <a href="https://spring.io/blog/2026/09/29/this-week-in-spring-september-29th-2026">Point hebdomadaire Spring : jalons Boot 4.2.0 M2, Security 7.2.0-M2 et Batch 6.1.0-M2</a></h3><p>La lettre hebdomadaire de Josh Long liste les jalons publiés les 24 et 25 septembre : Spring Boot 4.2.0 M2 (bundles SSL pour LDAP/LDAPS, conventions sémantiques OpenTelemetry, configuration de l&#x27;endpoint OTLP), Spring Security 7.2.0-M2, Spring Data 2026.1.0-M2, Spring Batch 6.1.0-M2 et Spring Cloud 2026.0.0-M1. Aucune correction de sécurité n&#x27;y est mentionnée.</p><p><strong>Pourquoi c'est important :</strong> Permet d&#x27;anticiper la prochaine version mineure de Boot et de Security avant sa sortie finale.</p><p><em>Action suggérée : <strong>surveiller</strong> · Source : spring.io · Publié le 2026-09-29 · Confiance : élevée</em></p></article></section></body></html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Veille Java / Architecture hexagonale / C4</title><meta name="description" content="Veille technologique quotidienne : développement Java, architecture hexagonale, diagrammes C4."><link rel="alternate" type="application/rss+xml" href="https://pogauh.github.io/veille_technologique/feed.xml"><style>
+:root{color-scheme:light dark;--bg:#f6f8fa;--card:#fff;--soft:#eef1f5;--border:#d8dee4;--text:#1f2328;--muted:#656d76;
+--accent:#0969da;--c-java:#d9730d;--c-hexagonal:#8250df;--c-c4:#0a8ea6;--c-securite:#d1242f;--ok:#1a7f37;--warn:#bf8700}
+:root[data-theme=dark]{--bg:#0d1117;--card:#161b22;--soft:#21262d;--border:#30363d;--text:#e6edf3;--muted:#8b949e;
+--accent:#58a6ff;--c-java:#f0883e;--c-hexagonal:#a371f7;--c-c4:#39c5cf;--c-securite:#ff7b72;--ok:#3fb950;--warn:#d29922}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0d1117;--card:#161b22;--soft:#21262d;--border:#30363d;
+--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--c-java:#f0883e;--c-hexagonal:#a371f7;--c-c4:#39c5cf;--c-securite:#ff7b72;
+--ok:#3fb950;--warn:#d29922}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+-webkit-font-smoothing:antialiased}
+main{max-width:800px;margin:0 auto;padding:2.5rem 1rem 4rem}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+header.top{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem}
+h1{margin:0;font-size:clamp(1.7rem,4.5vw,2.4rem);line-height:1.15;letter-spacing:-.025em;
+background:linear-gradient(90deg,var(--accent),var(--c-hexagonal) 60%,var(--c-securite));
+-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:.4rem 0 0;color:var(--muted);font-size:.9rem}
+.actions{display:flex;gap:.5rem;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);background:var(--card);color:var(--text);
+padding:.4rem .8rem;border-radius:8px;font:inherit;font-size:.85rem;text-decoration:none;cursor:pointer;
+transition:border-color .15s,transform .15s}
+.btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 2rem;position:sticky;top:0;z-index:5;padding:.7rem 0;
+background:linear-gradient(var(--bg) 75%,transparent)}
+.chip{border:1px solid var(--border);background:var(--card);color:var(--muted);padding:.25rem .8rem;border-radius:999px;
+font:inherit;font-size:.82rem;cursor:pointer;transition:all .15s}
+.chip:hover{color:var(--text);border-color:var(--muted)}
+.chip[aria-pressed=true]{color:#fff;background:var(--c,var(--accent));border-color:var(--c,var(--accent))}
+.chip .n{opacity:.7;margin-left:.3rem;font-size:.75rem}
+.timeline{position:relative;margin-left:.5rem;padding-left:1.6rem;border-left:2px solid var(--border)}
+section.day{position:relative;margin-bottom:2.6rem}
+section.day::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.55rem;width:12px;height:12px;border-radius:50%;
+background:var(--accent);box-shadow:0 0 0 4px var(--bg),0 0 12px var(--accent)}
+section.day>h2{margin:0;font-size:1.25rem;letter-spacing:-.01em}
+section.day>h2::first-letter{text-transform:uppercase}
+section.day>h2 small{display:block;font:500 .75rem ui-monospace,monospace;color:var(--muted);text-transform:none;letter-spacing:.03em}
+.resume{margin:.9rem 0 1.1rem;padding:.8rem 1rem;background:var(--soft);border-radius:10px;color:var(--text);font-size:.95rem}
+article.card{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--c);border-radius:12px;
+padding:1.1rem 1.3rem;margin:1rem 0;transition:transform .15s,box-shadow .15s,border-color .15s}
+article.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.t-java{--c:var(--c-java)}.t-hexagonal{--c:var(--c-hexagonal)}.t-c4{--c:var(--c-c4)}.t-securite{--c:var(--c-securite)}
+.head{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-bottom:.45rem}
+.badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:700;text-transform:uppercase;
+letter-spacing:.06em;padding:.15rem .6rem;border-radius:999px;color:var(--c);
+background:color-mix(in srgb,var(--c) 16%,transparent);border:1px solid color-mix(in srgb,var(--c) 35%,transparent)}
+.badge.cvss{--c:var(--warn);font-family:ui-monospace,monospace}
+.badge.cvss.crit{--c:var(--c-securite)}
+article h3{margin:0 0 .5rem;font-size:1.08rem;line-height:1.35;letter-spacing:-.01em}
+article h3 a{color:var(--text);text-decoration:none;background:linear-gradient(var(--c),var(--c)) 0 100%/0 2px no-repeat;
+transition:background-size .2s,color .15s}
+article h3 a:hover{color:var(--c);background-size:100% 2px}
+article p{margin:.5rem 0;color:color-mix(in srgb,var(--text) 88%,transparent);font-size:.95rem}
+code{background:var(--soft);padding:.08rem .35rem;border-radius:5px;font-size:.84em}
+.why{margin:.8rem 0;padding:.6rem .9rem;border-left:3px solid var(--c);border-radius:0 8px 8px 0;
+background:color-mix(in srgb,var(--c) 8%,transparent);font-size:.92rem}
+.why strong{color:var(--c)}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem;font-size:.76rem;color:var(--muted)}
+.meta span{background:var(--soft);padding:.12rem .55rem;border-radius:6px}
+.meta .act{background:var(--accent);color:#fff;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.dot{display:inline-block;width:.5rem;height:.5rem;border-radius:50%;margin-right:.35rem;background:var(--ok)}
+.dot.moyenne{background:var(--warn)}.dot.faible{background:var(--c-securite)}
+.hidden{display:none!important}
+footer{margin-top:3rem;color:var(--muted);font-size:.8rem;text-align:center}
+@media(max-width:560px){.timeline{padding-left:1.1rem;margin-left:.3rem}section.day::before{left:calc(-1.1rem - 7px)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body><main><header class="top"><div><h1>Veille Java / Architecture hexagonale / C4</h1><p class="sub">3 articles · dernière mise à jour : vendredi 2 octobre 2026</p></div><div class="actions"><a class="btn" href="feed.xml">◉ Flux RSS</a><button class="btn" id="theme" type="button" aria-label="Changer de thème">◐ Thème</button></div></header><nav class="filters" aria-label="Filtrer par thème"><button class="chip" data-f="all" aria-pressed="true">Tout<span class="n">3</span></button><button class="chip t-java" style="--c:var(--c-java)" data-f="java" aria-pressed="false">☕ Java<span class="n">1</span></button><button class="chip t-securite" style="--c:var(--c-securite)" data-f="securite" aria-pressed="false">🛡 Sécurité<span class="n">2</span></button></nav><div class="timeline"><section class="day" id="2026-10-02"><h2>vendredi 2 octobre 2026<small>2026-10-02</small></h2><p class="resume">Journée calme côté Java, hexagonal et C4 : aucune release majeure vérifiée dans la fenêtre. Deux avis de sécurité à sévérité élevée touchent jackson-core (DoS) ; les correctifs sont disponibles dans les branches 2.18, 2.21, 2.22 et 3.x.</p><article class="card t-securite"><div class="head"><span class="badge">🛡 Sécurité</span><span class="badge cvss">CVSS 7.5</span></div><h3><a href="https://github.com/advisories/GHSA-7hhh-6rmp-j9qf" target="_blank" rel="noopener">jackson-core : consommation mémoire non bornée dans UTF8DataInputJsonParser (DoS)</a></h3><p><code>CVE-2026-89425</code>, gravité haute (CVSS 7.5). Le parseur DataInput construit le message d&#x27;erreur d&#x27;un jeton invalide sans respecter maxErrorTokenLength, d&#x27;où un risque d&#x27;OutOfMemoryError. Concerne jackson-core <code>2.8.0</code> à <code>2.18.10</code>, <code>2.19.0</code> à <code>2.21.6</code>, <code>2.22.0</code> à <code>2.22.2</code> et tools.jackson.core 3.x ; corrigé en <code>2.18.11</code>, <code>2.21.7</code>, <code>2.22.3</code>, <code>3.1.7</code> et <code>3.2.3</code>. L&#x27;avis a été publié upstream le 22/09 et référencé par GitHub le 01/10.</p><div class="why"><strong>Pourquoi c'est important</strong> · Jackson est présent dans presque toutes les applications Spring : le risque de déni de service justifie une montée de version.</div><div class="meta"><span class="act">corriger</span><span>GitHub Security Advisories</span><span class="mono">2026-10-01</span><span><i class="dot elevee"></i>confiance élevée</span></div></article><article class="card t-securite"><div class="head"><span class="badge">🛡 Sécurité</span><span class="badge cvss">CVSS 7.5</span></div><h3><a href="https://github.com/advisories/GHSA-p6pp-m3f8-5c89" target="_blank" rel="noopener">jackson-core : ReDoS quadratique dans NumberInput.PATTERN_FLOAT</a></h3><p><code>CVE-2026-89407</code>, gravité haute (CVSS 7.5). L&#x27;expression régulière de lecture des flottants a un comportement quadratique sur certaines entrées, et la limite appliquée est maxStringLength (20 M de caractères) plutôt que maxNumberLength. Concerne jackson-core <code>2.17.0</code> à <code>2.18.10</code>, <code>2.19.0</code> à <code>2.21.6</code>, <code>2.22.0</code> à <code>2.22.2</code> et <code>3.0.0</code> à <code>3.2.1</code> ; corrigé en <code>2.18.11</code>, <code>2.21.7</code>, <code>2.22.3</code>, <code>3.1.7</code> et <code>3.2.2</code>. Avis publié upstream le 22/09.</p><div class="why"><strong>Pourquoi c'est important</strong> · Quelques requêtes JSON forgées peuvent saturer les threads d&#x27;un service exposé ; à traiter avec le correctif précédent.</div><div class="meta"><span class="act">corriger</span><span>GitHub Security Advisories</span><span class="mono">2026-10-01</span><span><i class="dot elevee"></i>confiance élevée</span></div></article></section><section class="day" id="2026-09-30"><h2>mercredi 30 septembre 2026<small>2026-09-30</small></h2><p class="resume">Journée calme. Le point hebdomadaire Spring recense une vague de jalons (Boot 4.2.0 M2, Security 7.2.0-M2, Data, Batch) et aucune correction de sécurité. Rien de nouveau n&#x27;a pu être vérifié en source primaire sur les thèmes hexagonal et C4 dans la fenêtre.</p><article class="card t-java"><div class="head"><span class="badge">☕ Java</span></div><h3><a href="https://spring.io/blog/2026/09/29/this-week-in-spring-september-29th-2026" target="_blank" rel="noopener">Point hebdomadaire Spring : jalons Boot 4.2.0 M2, Security 7.2.0-M2 et Batch 6.1.0-M2</a></h3><p>La lettre hebdomadaire de Josh Long liste les jalons publiés les 24 et 25 septembre : Spring Boot <code>4.2.0</code> M2 (bundles SSL pour LDAP/LDAPS, conventions sémantiques OpenTelemetry, configuration de l&#x27;endpoint OTLP), Spring Security 7.2.0-M2, Spring Data 2026.1.0-M2, Spring Batch 6.1.0-M2 et Spring Cloud 2026.0.0-M1. Aucune correction de sécurité n&#x27;y est mentionnée.</p><div class="why"><strong>Pourquoi c'est important</strong> · Permet d&#x27;anticiper la prochaine version mineure de Boot et de Security avant sa sortie finale.</div><div class="meta"><span class="act">surveiller</span><span>spring.io</span><span class="mono">2026-09-29</span><span><i class="dot elevee"></i>confiance élevée</span></div></article></section></div><footer>Généré automatiquement · veille quotidienne</footer></main><script>
+(function(){
+var root=document.documentElement,store;
+try{store=window.localStorage}catch(e){}
+try{var s=store&&store.getItem('theme');if(s)root.dataset.theme=s}catch(e){}
+var tb=document.getElementById('theme');
+if(tb)tb.addEventListener('click',function(){
+ var dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+ root.dataset.theme=dark?'light':'dark';
+ try{store&&store.setItem('theme',root.dataset.theme)}catch(e){}});
+var chips=[].slice.call(document.querySelectorAll('.chip')),cards=[].slice.call(document.querySelectorAll('article.card'));
+function apply(f){
+ chips.forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.f===f))});
+ cards.forEach(function(a){a.classList.toggle('hidden',f!=='all'&&!a.classList.contains('t-'+f))});
+ [].forEach.call(document.querySelectorAll('section.day'),function(d){
+  d.classList.toggle('hidden',!d.querySelector('article.card:not(.hidden)')&&f!=='all')});
+}
+chips.forEach(function(c){c.addEventListener('click',function(){apply(c.dataset.f)})});
+})();
+</script></body></html>
