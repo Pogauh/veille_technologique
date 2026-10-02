@@ -3,6 +3,28 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-10-02
+
+**Résumé du jour.** Journée calme côté Java, hexagonal et C4 : aucune release majeure vérifiée dans la fenêtre. Deux avis de sécurité à sévérité élevée touchent jackson-core (DoS) ; les correctifs sont disponibles dans les branches 2.18, 2.21, 2.22 et 3.x.
+
+
+### Sécurité
+
+#### [jackson-core : consommation mémoire non bornée dans UTF8DataInputJsonParser (DoS)](https://github.com/advisories/GHSA-7hhh-6rmp-j9qf)
+*GitHub Security Advisories · publié le 2026-10-01 · confiance : élevée · action : corriger*
+
+CVE-2026-89425, gravité haute (CVSS 7.5). Le parseur DataInput construit le message d'erreur d'un jeton invalide sans respecter maxErrorTokenLength, d'où un risque d'OutOfMemoryError. Concerne jackson-core 2.8.0 à 2.18.10, 2.19.0 à 2.21.6, 2.22.0 à 2.22.2 et tools.jackson.core 3.x ; corrigé en 2.18.11, 2.21.7, 2.22.3, 3.1.7 et 3.2.3. L'avis a été publié upstream le 22/09 et référencé par GitHub le 01/10.
+
+**Pourquoi c'est important :** Jackson est présent dans presque toutes les applications Spring : le risque de déni de service justifie une montée de version.
+
+#### [jackson-core : ReDoS quadratique dans NumberInput.PATTERN_FLOAT](https://github.com/advisories/GHSA-p6pp-m3f8-5c89)
+*GitHub Security Advisories · publié le 2026-10-01 · confiance : élevée · action : corriger*
+
+CVE-2026-89407, gravité haute (CVSS 7.5). L'expression régulière de lecture des flottants a un comportement quadratique sur certaines entrées, et la limite appliquée est maxStringLength (20 M de caractères) plutôt que maxNumberLength. Concerne jackson-core 2.17.0 à 2.18.10, 2.19.0 à 2.21.6, 2.22.0 à 2.22.2 et 3.0.0 à 3.2.1 ; corrigé en 2.18.11, 2.21.7, 2.22.3, 3.1.7 et 3.2.2. Avis publié upstream le 22/09.
+
+**Pourquoi c'est important :** Quelques requêtes JSON forgées peuvent saturer les threads d'un service exposé ; à traiter avec le correctif précédent.
+
+
 ## 2026-09-30
 
 **Résumé du jour.** Journée calme. Le point hebdomadaire Spring recense une vague de jalons (Boot 4.2.0 M2, Security 7.2.0-M2, Data, Batch) et aucune correction de sécurité. Rien de nouveau n'a pu être vérifié en source primaire sur les thèmes hexagonal et C4 dans la fenêtre.
