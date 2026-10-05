@@ -1,5 +1,28 @@
 {
-  "date": "2026-10-04",
-  "resume_du_jour": "",
-  "items": []
+  "date": "2026-10-05",
+  "resume_du_jour": "Veille réduite : plusieurs sources primaires (openjdk.org, quarkus.io, inside.java) étaient inaccessibles depuis l'environnement. À retenir : Quarkus 4.0.0.Beta1 (Java 21 minimum) et deux JEP ciblant JDK 28 signalés par Baeldung, à confirmer. Aucune alerte de sécurité nouvelle vérifiée.",
+  "items": [
+    {
+      "titre": "Quarkus 4.0.0.Beta1 : première bêta de la prochaine version majeure",
+      "url": "https://github.com/quarkusio/quarkus/releases",
+      "source": "github.com/quarkusio/quarkus",
+      "date_publication": "2026-10-01",
+      "theme": "java",
+      "resume": "La page des releases GitHub de Quarkus liste une préversion 4.0.0.Beta1 publiée le 1er octobre. Elle fixerait Java 21 comme version minimale et intégrerait Hibernate 8 ainsi que Jakarta REST 4. Publication juste en dehors de la fenêtre de 72 h ; le détail des changements cassants n'a pas pu être lu sur le blog officiel.",
+      "importance": "Une majeure avec baseline Java 21 impose de planifier dès maintenant la migration des applications Quarkus.",
+      "action": "surveiller",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "JEP 540 : API JSON simple (incubation) ciblée pour JDK 28",
+      "url": "https://www.baeldung.com/java-weekly-666",
+      "source": "baeldung.com",
+      "date_publication": "2026-10-02",
+      "theme": "java",
+      "resume": "La newsletter Java Weekly n°666 signale que le JEP 540, une API JSON simple en incubation, a été ciblé pour JDK 28 le 2 octobre. Elle mentionne aussi le JEP 541, qui déprécie le port macOS/x64 en vue de sa suppression. Informations relayées par une source secondaire, non recoupées avec openjdk.org (inaccessible).",
+      "importance": "Une API JSON dans le JDK pourrait à terme réduire la dépendance à Jackson ou Gson pour les cas simples.",
+      "action": "surveiller",
+      "confiance": "faible"
+    }
+  ]
 }

@@ -3,6 +3,28 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-10-05
+
+**Résumé du jour.** Veille réduite : plusieurs sources primaires (openjdk.org, quarkus.io, inside.java) étaient inaccessibles depuis l'environnement. À retenir : Quarkus 4.0.0.Beta1 (Java 21 minimum) et deux JEP ciblant JDK 28 signalés par Baeldung, à confirmer. Aucune alerte de sécurité nouvelle vérifiée.
+
+
+### Java
+
+#### [JEP 540 : API JSON simple (incubation) ciblée pour JDK 28](https://www.baeldung.com/java-weekly-666)
+*baeldung.com · publié le 2026-10-02 · confiance : faible · action : surveiller*
+
+La newsletter Java Weekly n°666 signale que le JEP 540, une API JSON simple en incubation, a été ciblé pour JDK 28 le 2 octobre. Elle mentionne aussi le JEP 541, qui déprécie le port macOS/x64 en vue de sa suppression. Informations relayées par une source secondaire, non recoupées avec openjdk.org (inaccessible).
+
+**Pourquoi c'est important :** Une API JSON dans le JDK pourrait à terme réduire la dépendance à Jackson ou Gson pour les cas simples.
+
+#### [Quarkus 4.0.0.Beta1 : première bêta de la prochaine version majeure](https://github.com/quarkusio/quarkus/releases)
+*github.com/quarkusio/quarkus · publié le 2026-10-01 · confiance : élevée · action : surveiller*
+
+La page des releases GitHub de Quarkus liste une préversion 4.0.0.Beta1 publiée le 1er octobre. Elle fixerait Java 21 comme version minimale et intégrerait Hibernate 8 ainsi que Jakarta REST 4. Publication juste en dehors de la fenêtre de 72 h ; le détail des changements cassants n'a pas pu être lu sur le blog officiel.
+
+**Pourquoi c'est important :** Une majeure avec baseline Java 21 impose de planifier dès maintenant la migration des applications Quarkus.
+
+
 ## 2026-10-02
 
 **Résumé du jour.** Journée calme côté Java, hexagonal et C4 : aucune release majeure vérifiée dans la fenêtre. Deux avis de sécurité à sévérité élevée touchent jackson-core (DoS) ; les correctifs sont disponibles dans les branches 2.18, 2.21, 2.22 et 3.x.
