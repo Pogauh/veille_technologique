@@ -1,26 +1,26 @@
 {
-  "date": "2026-10-05",
-  "resume_du_jour": "Veille réduite : plusieurs sources primaires (openjdk.org, quarkus.io, inside.java) étaient inaccessibles depuis l'environnement. À retenir : Quarkus 4.0.0.Beta1 (Java 21 minimum) et deux JEP ciblant JDK 28 signalés par Baeldung, à confirmer. Aucune alerte de sécurité nouvelle vérifiée.",
+  "date": "2026-10-06",
+  "resume_du_jour": "Veille réduite : openjdk.org, inside.java et blogs.oracle.com sont inaccessibles depuis l'environnement. À retenir : Spring passe à un rythme de correctifs mensuel unique (« Patch Thursday », premier jalon le 22 octobre) face à la hausse des CVE. Oracle annoncerait aussi un changement de licence pour les mises à jour d'Oracle JDK 21 dès le CPU d'octobre, à confirmer. Aucune alerte de sécurité nouvelle vérifiée.",
   "items": [
     {
-      "titre": "Quarkus 4.0.0.Beta1 : première bêta de la prochaine version majeure",
-      "url": "https://github.com/quarkusio/quarkus/releases",
-      "source": "github.com/quarkusio/quarkus",
-      "date_publication": "2026-10-01",
-      "theme": "java",
-      "resume": "La page des releases GitHub de Quarkus liste une préversion 4.0.0.Beta1 publiée le 1er octobre. Elle fixerait Java 21 comme version minimale et intégrerait Hibernate 8 ainsi que Jakarta REST 4. Publication juste en dehors de la fenêtre de 72 h ; le détail des changements cassants n'a pas pu être lu sur le blog officiel.",
-      "importance": "Une majeure avec baseline Java 21 impose de planifier dès maintenant la migration des applications Quarkus.",
+      "titre": "Spring adopte un « Patch Thursday » mensuel face à l'afflux de CVE",
+      "url": "https://spring.io/blog/2026/09/21/releasing-spring-for-modern-challenges/",
+      "source": "spring.io",
+      "date_publication": "2026-09-21",
+      "theme": "securite",
+      "resume": "L'équipe Spring regroupe désormais ses correctifs sur un seul jour par mois, le jeudi suivant le troisième lundi. Elle explique avoir reçu près de 80 signalements de sécurité par mois depuis mars et corrigé plus de 160 CVE ; la page des avis de sécurité est refondue avec filtres par gravité et projet. Le premier lot de correctifs est annoncé pour le 22 octobre 2026. Publication hors fenêtre de 72 h, retenue comme article de fond récent.",
+      "importance": "Les équipes doivent caler leurs montées de version Spring sur ce rythme mensuel et s'attendre à un volume élevé de correctifs de sécurité.",
       "action": "surveiller",
       "confiance": "elevee"
     },
     {
-      "titre": "JEP 540 : API JSON simple (incubation) ciblée pour JDK 28",
-      "url": "https://www.baeldung.com/java-weekly-666",
-      "source": "baeldung.com",
-      "date_publication": "2026-10-02",
+      "titre": "Oracle JDK 21 : mises à jour sous licence OTN dès le CPU d'octobre 2026",
+      "url": "https://blogs.oracle.com/java/jdk-21-approaches-end-of-permissive-license",
+      "source": "blogs.oracle.com",
+      "date_publication": "2026-10-05",
       "theme": "java",
-      "resume": "La newsletter Java Weekly n°666 signale que le JEP 540, une API JSON simple en incubation, a été ciblé pour JDK 28 le 2 octobre. Elle mentionne aussi le JEP 541, qui déprécie le port macOS/x64 en vue de sa suppression. Informations relayées par une source secondaire, non recoupées avec openjdk.org (inaccessible).",
-      "importance": "Une API JSON dans le JDK pourrait à terme réduire la dépendance à Jackson ou Gson pour les cas simples.",
+      "resume": "Selon un article du blog Java d'Oracle relevé via un moteur de recherche (page non lisible directement), les mises à jour d'Oracle JDK 21 publiées à partir du CPU d'octobre 2026 passeraient sous licence Java SE OTN, comme Java 8, 11 et 17. Oracle recommanderait JDK 25 ou ultérieur pour rester sous licence permissive. Date de publication et détails non vérifiés ; les distributions OpenJDK (Temurin, Corretto) ne sont pas concernées par cette annonce.",
+      "importance": "Les équipes qui utilisent Oracle JDK 21 doivent vérifier leur licence ou migrer vers JDK 25 ou une distribution OpenJDK.",
       "action": "surveiller",
       "confiance": "faible"
     }

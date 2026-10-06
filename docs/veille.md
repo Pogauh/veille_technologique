@@ -3,6 +3,31 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-10-06
+
+**Résumé du jour.** Veille réduite : openjdk.org, inside.java et blogs.oracle.com sont inaccessibles depuis l'environnement. À retenir : Spring passe à un rythme de correctifs mensuel unique (« Patch Thursday », premier jalon le 22 octobre) face à la hausse des CVE. Oracle annoncerait aussi un changement de licence pour les mises à jour d'Oracle JDK 21 dès le CPU d'octobre, à confirmer. Aucune alerte de sécurité nouvelle vérifiée.
+
+
+### Java
+
+#### [Oracle JDK 21 : mises à jour sous licence OTN dès le CPU d'octobre 2026](https://blogs.oracle.com/java/jdk-21-approaches-end-of-permissive-license)
+*blogs.oracle.com · publié le 2026-10-05 · confiance : faible · action : surveiller*
+
+Selon un article du blog Java d'Oracle relevé via un moteur de recherche (page non lisible directement), les mises à jour d'Oracle JDK 21 publiées à partir du CPU d'octobre 2026 passeraient sous licence Java SE OTN, comme Java 8, 11 et 17. Oracle recommanderait JDK 25 ou ultérieur pour rester sous licence permissive. Date de publication et détails non vérifiés ; les distributions OpenJDK (Temurin, Corretto) ne sont pas concernées par cette annonce.
+
+**Pourquoi c'est important :** Les équipes qui utilisent Oracle JDK 21 doivent vérifier leur licence ou migrer vers JDK 25 ou une distribution OpenJDK.
+
+
+### Sécurité
+
+#### [Spring adopte un « Patch Thursday » mensuel face à l'afflux de CVE](https://spring.io/blog/2026/09/21/releasing-spring-for-modern-challenges/)
+*spring.io · publié le 2026-09-21 · confiance : élevée · action : surveiller*
+
+L'équipe Spring regroupe désormais ses correctifs sur un seul jour par mois, le jeudi suivant le troisième lundi. Elle explique avoir reçu près de 80 signalements de sécurité par mois depuis mars et corrigé plus de 160 CVE ; la page des avis de sécurité est refondue avec filtres par gravité et projet. Le premier lot de correctifs est annoncé pour le 22 octobre 2026. Publication hors fenêtre de 72 h, retenue comme article de fond récent.
+
+**Pourquoi c'est important :** Les équipes doivent caler leurs montées de version Spring sur ce rythme mensuel et s'attendre à un volume élevé de correctifs de sécurité.
+
+
 ## 2026-10-05
 
 **Résumé du jour.** Veille réduite : plusieurs sources primaires (openjdk.org, quarkus.io, inside.java) étaient inaccessibles depuis l'environnement. À retenir : Quarkus 4.0.0.Beta1 (Java 21 minimum) et deux JEP ciblant JDK 28 signalés par Baeldung, à confirmer. Aucune alerte de sécurité nouvelle vérifiée.
