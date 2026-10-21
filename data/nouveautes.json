@@ -1,5 +1,17 @@
 {
-  "date": "2026-10-20",
-  "resume_du_jour": "",
-  "items": []
+  "date": "2026-10-21",
+  "resume_du_jour": "Oracle a publié le 20 octobre 2026 sa mise à jour critique trimestrielle, avec 55 correctifs pour Java SE. Aucune autre nouveauté notable n'a pu être vérifiée dans la fenêtre de veille.",
+  "items": [
+    {
+      "titre": "Oracle Critical Patch Update d'octobre 2026 : 55 correctifs pour Java SE",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "source": "oracle.com",
+      "date_publication": "2026-10-20",
+      "theme": "securite",
+      "resume": "Le CPU d'octobre 2026 corrige 55 vulnérabilités dans Java SE, dont 49 exploitables à distance sans authentification, avec un score CVSS v3.1 maximal de 7.5 (aucune faille critique). Les branches 8, 11, 17, 21, 25 et 27 sont concernées. Les numéros de build exacts diffèrent selon les sources consultées (l'advisory et les notes de version cloud) : page non ouverte directement, chiffres à confirmer.",
+      "importance": "Les JDK en production doivent être mis à jour vers les builds d'octobre ; les chiffres sont à confirmer sur la page Oracle.",
+      "action": "corriger",
+      "confiance": "moyenne"
+    }
+  ]
 }

@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-10-21
+
+**Résumé du jour.** Oracle a publié le 20 octobre 2026 sa mise à jour critique trimestrielle, avec 55 correctifs pour Java SE. Aucune autre nouveauté notable n'a pu être vérifiée dans la fenêtre de veille.
+
+
+### Sécurité
+
+#### [Oracle Critical Patch Update d'octobre 2026 : 55 correctifs pour Java SE](https://www.oracle.com/security-alerts/cpuoct2026.html)
+*oracle.com · publié le 2026-10-20 · confiance : moyenne · action : corriger*
+
+Le CPU d'octobre 2026 corrige 55 vulnérabilités dans Java SE, dont 49 exploitables à distance sans authentification, avec un score CVSS v3.1 maximal de 7.5 (aucune faille critique). Les branches 8, 11, 17, 21, 25 et 27 sont concernées. Les numéros de build exacts diffèrent selon les sources consultées (l'advisory et les notes de version cloud) : page non ouverte directement, chiffres à confirmer.
+
+**Pourquoi c'est important :** Les JDK en production doivent être mis à jour vers les builds d'octobre ; les chiffres sont à confirmer sur la page Oracle.
+
+
 ## 2026-10-06
 
 **Résumé du jour.** Veille réduite : openjdk.org, inside.java et blogs.oracle.com sont inaccessibles depuis l'environnement. À retenir : Spring passe à un rythme de correctifs mensuel unique (« Patch Thursday », premier jalon le 22 octobre) face à la hausse des CVE. Oracle annoncerait aussi un changement de licence pour les mises à jour d'Oracle JDK 21 dès le CPU d'octobre, à confirmer. Aucune alerte de sécurité nouvelle vérifiée.

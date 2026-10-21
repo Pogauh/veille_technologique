@@ -2,6 +2,19 @@
   "version": 1,
   "items": [
     {
+      "titre": "Oracle Critical Patch Update d'octobre 2026 : 55 correctifs pour Java SE",
+      "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
+      "source": "oracle.com",
+      "date_publication": "2026-10-20",
+      "theme": "securite",
+      "resume": "Le CPU d'octobre 2026 corrige 55 vulnérabilités dans Java SE, dont 49 exploitables à distance sans authentification, avec un score CVSS v3.1 maximal de 7.5 (aucune faille critique). Les branches 8, 11, 17, 21, 25 et 27 sont concernées. Les numéros de build exacts diffèrent selon les sources consultées (l'advisory et les notes de version cloud) : page non ouverte directement, chiffres à confirmer.",
+      "importance": "Les JDK en production doivent être mis à jour vers les builds d'octobre ; les chiffres sont à confirmer sur la page Oracle.",
+      "action": "corriger",
+      "confiance": "moyenne",
+      "id": "dd19d24f35952d222ad0c57f97cdcd75b1796e5c",
+      "date_ajout": "2026-10-21"
+    },
+    {
       "titre": "Oracle JDK 21 : mises à jour sous licence OTN dès le CPU d'octobre 2026",
       "url": "https://blogs.oracle.com/java/jdk-21-approaches-end-of-permissive-license",
       "source": "blogs.oracle.com",
@@ -94,6 +107,10 @@
     }
   ],
   "syntheses": [
+    {
+      "date": "2026-10-21",
+      "resume": "Oracle a publié le 20 octobre 2026 sa mise à jour critique trimestrielle, avec 55 correctifs pour Java SE. Aucune autre nouveauté notable n'a pu être vérifiée dans la fenêtre de veille."
+    },
     {
       "date": "2026-10-06",
       "resume": "Veille réduite : openjdk.org, inside.java et blogs.oracle.com sont inaccessibles depuis l'environnement. À retenir : Spring passe à un rythme de correctifs mensuel unique (« Patch Thursday », premier jalon le 22 octobre) face à la hausse des CVE. Oracle annoncerait aussi un changement de licence pour les mises à jour d'Oracle JDK 21 dès le CPU d'octobre, à confirmer. Aucune alerte de sécurité nouvelle vérifiée."
