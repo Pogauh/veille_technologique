@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-10-23
+
+**Résumé du jour.** Journée calme : seule nouveauté vérifiée en source primaire, la sortie de Spring Batch 6.1.0-RC1 et du correctif 6.0.6. Le CPU Oracle d'octobre (Java SE) a déjà été publié dans une édition précédente.
+
+
+### Java
+
+#### [Spring Batch 6.1.0-RC1 et 6.0.6 disponibles sur Maven Central](https://spring.io/blog/2026/10/22/spring-batch-6)
+*spring.io · publié le 2026-10-22 · confiance : élevée · action : tester*
+
+La RC1 de Spring Batch 6.1 apporte l'annotation @JobParameter, un PageableItemReader basé sur Pageable de Spring Data, un support JSON indépendant de la bibliothèque (JsonLineAggregator) et des DAO JDBC passés à JdbcClient, dont les constructeurs sans argument disparaissent. Moins de requêtes SQL au redémarrage de jobs ; une partie de ces gains figure aussi dans le correctif 6.0.6.
+
+**Pourquoi c'est important :** Les projets batch peuvent tester la RC1 et anticiper la rupture sur les constructeurs des DAO JDBC.
+
+
 ## 2026-10-21
 
 **Résumé du jour.** Oracle a publié le 20 octobre 2026 sa mise à jour critique trimestrielle, avec 55 correctifs pour Java SE. Aucune autre nouveauté notable n'a pu être vérifiée dans la fenêtre de veille.

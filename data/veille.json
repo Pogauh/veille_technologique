@@ -2,6 +2,19 @@
   "version": 1,
   "items": [
     {
+      "titre": "Spring Batch 6.1.0-RC1 et 6.0.6 disponibles sur Maven Central",
+      "url": "https://spring.io/blog/2026/10/22/spring-batch-6",
+      "source": "spring.io",
+      "date_publication": "2026-10-22",
+      "theme": "java",
+      "resume": "La RC1 de Spring Batch 6.1 apporte l'annotation @JobParameter, un PageableItemReader basé sur Pageable de Spring Data, un support JSON indépendant de la bibliothèque (JsonLineAggregator) et des DAO JDBC passés à JdbcClient, dont les constructeurs sans argument disparaissent. Moins de requêtes SQL au redémarrage de jobs ; une partie de ces gains figure aussi dans le correctif 6.0.6.",
+      "importance": "Les projets batch peuvent tester la RC1 et anticiper la rupture sur les constructeurs des DAO JDBC.",
+      "action": "tester",
+      "confiance": "elevee",
+      "id": "5b91f38b2fe80696b201700f25722ee7a0ed1f9b",
+      "date_ajout": "2026-10-23"
+    },
+    {
       "titre": "Oracle Critical Patch Update d'octobre 2026 : 55 correctifs pour Java SE",
       "url": "https://www.oracle.com/security-alerts/cpuoct2026.html",
       "source": "oracle.com",
@@ -107,6 +120,10 @@
     }
   ],
   "syntheses": [
+    {
+      "date": "2026-10-23",
+      "resume": "Journée calme : seule nouveauté vérifiée en source primaire, la sortie de Spring Batch 6.1.0-RC1 et du correctif 6.0.6. Le CPU Oracle d'octobre (Java SE) a déjà été publié dans une édition précédente."
+    },
     {
       "date": "2026-10-21",
       "resume": "Oracle a publié le 20 octobre 2026 sa mise à jour critique trimestrielle, avec 55 correctifs pour Java SE. Aucune autre nouveauté notable n'a pu être vérifiée dans la fenêtre de veille."
