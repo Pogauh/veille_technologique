@@ -3,6 +3,35 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-10-24
+
+**Résumé du jour.** Journée calme côté Java : la publication du 23 octobre de Spring Boot 4.2.0-RC1 et de la correction 4.1.2 est l'essentiel à retenir. Aucune alerte de sécurité nouvelle vérifiée. Rien de notable sur l'architecture hexagonale ni sur C4 dans la fenêtre.
+
+
+### Java
+
+#### [Spring Boot 4.2.0-RC1 : builder Buildpacks Ubuntu 26.04 et démarrage accéléré](https://spring.io/blog/2026/10/23/spring-boot-4-2-0-RC1-available-now)
+*spring.io · publié le 2026-10-23 · confiance : élevée · action : tester*
+
+Première release candidate de Spring Boot 4.2 avec 113 améliorations. Le builder Buildpacks par défaut passe sur Ubuntu 26.04, le migrateur de propriétés peut faire échouer l'application en cas d'erreur ou d'avertissement, et la recherche de classes et ressources dans les jars exécutables est plus rapide.
+
+**Pourquoi c'est important :** Permet d'anticiper la migration vers 4.2 et de tester l'impact sur les images conteneur et le démarrage.
+
+#### [Spring Boot 4.1.2 et 4.0.9 : versions correctives publiées](https://spring.io/blog/2026/10/23/spring-boot-4-1-2-available-now)
+*spring.io · publié le 2026-10-23 · confiance : élevée · action : migrer*
+
+Spring Boot 4.1.2 apporte 126 corrections de bogues, mises à jour de documentation et de dépendances ; 4.0.9 est publiée le même jour. L'annonce ne mentionne aucun correctif de sécurité ni CVE ; le détail se trouve dans les notes de version GitHub.
+
+**Pourquoi c'est important :** Mise à jour de routine à intégrer dans les branches 4.1 et 4.0 en production.
+
+#### [Spring Cloud 2026.0.0-RC1 (Paddington) et 2025.1.4 disponibles](https://spring.io/blog/2026/10/23/spring-cloud-2026-0-0-RC1-has-been-released)
+*spring.io · publié le 2026-10-23 · confiance : moyenne · action : surveiller*
+
+Le train de versions Spring Cloud 2026.0.0 atteint sa première release candidate, en parallèle de la version corrective 2025.1.4 (Northfields). Le contenu détaillé n'a pas été relu en profondeur : se référer à l'annonce.
+
+**Pourquoi c'est important :** À suivre pour les équipes utilisant Spring Cloud, en lien avec Spring Boot 4.2.
+
+
 ## 2026-10-23
 
 **Résumé du jour.** Journée calme : seule nouveauté vérifiée en source primaire, la sortie de Spring Batch 6.1.0-RC1 et du correctif 6.0.6. Le CPU Oracle d'octobre (Java SE) a déjà été publié dans une édition précédente.
