@@ -1,39 +1,5 @@
 {
-  "date": "2026-10-26",
-  "resume_du_jour": "Week-end calme : l'actualité se limite aux publications Spring du 23 octobre. Spring AI 2.1.0-RC1 apporte la mémoire de session et la confirmation des appels d'outils, avec des dépréciations à anticiper. Spring Boot 4.0.9 et Spring Cloud 2025.1.4 sont des versions de maintenance. Aucune alerte de sécurité vérifiée dans la fenêtre.",
-  "items": [
-    {
-      "titre": "Spring AI 2.1.0-RC1 : mémoire de session, confirmation des outils et dépréciations",
-      "url": "https://spring.io/blog/2026/10/23/spring-ai-2-1-0-RC1-available-now",
-      "source": "spring.io",
-      "date_publication": "2026-10-23",
-      "theme": "java",
-      "resume": "La première release candidate de Spring AI 2.1.0 introduit une API de session stockant les conversations sous forme de journal d'événements, avec un dépôt JDBC, ainsi qu'une confirmation avant exécution des outils. L'API ChatMemory est dépréciée pour suppression en 3.0.0, et BedrockChatOptions.requestParameters change de type. La version corrective 2.0.2 est publiée en parallèle.",
-      "importance": "Les équipes utilisant ChatMemory ou Bedrock doivent planifier la migration et tester la RC avant la version finale.",
-      "action": "tester",
-      "confiance": "elevee"
-    },
-    {
-      "titre": "Spring Boot 4.0.9 : version corrective avec 99 corrections de bugs",
-      "url": "https://spring.io/blog/2026/10/23/spring-boot-4-0-9-available-now",
-      "source": "spring.io",
-      "date_publication": "2026-10-23",
-      "theme": "java",
-      "resume": "Spring Boot 4.0.9 est disponible sur Maven Central avec 99 corrections de bugs, des améliorations de documentation et des montées de version de dépendances. L'annonce ne mentionne aucun CVE.",
-      "importance": "Mise à jour de routine à appliquer sur les projets en branche 4.0, dont le support open source se termine fin 2026 selon les sources secondaires.",
-      "action": "migrer",
-      "confiance": "elevee"
-    },
-    {
-      "titre": "Spring Cloud 2025.1.4 (Northfields) publiée, basée sur Spring Boot 4.0.9",
-      "url": "https://spring.io/blog/2026/10/23/spring-cloud-2025-1-4-has-been-released",
-      "source": "spring.io",
-      "date_publication": "2026-10-23",
-      "theme": "java",
-      "resume": "La release train Spring Cloud 2025.1.4 est disponible, construite sur Spring Boot 4.0.9 et compatible avec Boot 4.1.2. Elle corrige des bugs dans l'ensemble des projets, avec par exemple Config 5.0.6 et Function 5.0.5, la plupart des autres modules passant en 5.0.4.",
-      "importance": "À aligner avec la mise à jour de Spring Boot 4.0.9 pour garder des versions cohérentes dans le BOM.",
-      "action": "migrer",
-      "confiance": "elevee"
-    }
-  ]
+  "date": "2026-10-27",
+  "resume_du_jour": "",
+  "items": []
 }
