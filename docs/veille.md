@@ -3,6 +3,28 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-10-29
+
+**Résumé du jour.** Journée calme. Spring AI 2.1 (candidate à la release RC1) se précise avec deux articles du 28 octobre : un modèle de messages en parties ordonnées pour conserver le raisonnement des modèles, et la possibilité d'enregistrer ses propres embeddings. Aucune alerte de sécurité Spring nouvelle sur la période.
+
+
+### Java
+
+#### [Spring AI 2.1 : des messages en parties pour préserver le raisonnement des modèles](https://spring.io/blog/2026/10/28/spring-ai-message-parts-reasoning-replay)
+*spring.io · publié le 2026-10-28 · confiance : élevée · action : surveiller*
+
+Spring AI 2.1 remplace le modèle chaîne de texte plus listes annexes par une liste ordonnée de parties de message, afin de renvoyer à l'identique les blocs de raisonnement et les signatures des fournisseurs. Cela concerne les principaux modèles de chat, et une mémoire de session persiste ces parties, tandis que ChatMemory devient obsolète. La version 2.1.0-RC1 était disponible à la publication.
+
+**Pourquoi c'est important :** Les équipes qui utilisent ChatMemory devront prévoir une migration vers la mémoire de session.
+
+#### [Spring AI 2.1 : stocker ses propres embeddings avec upsert](https://spring.io/blog/2026/10/28/spring-ai-upsert-own-embeddings)
+*spring.io · publié le 2026-10-28 · confiance : élevée · action : tester*
+
+Spring AI 2.1 ajoute une méthode upsert pour enregistrer des documents avec des vecteurs déjà calculés (image, audio, vidéo) sans passer par le modèle d'embedding du store. Une surcharge de similaritySearch accepte aussi un vecteur de requête précalculé. Disponible en 2.1.0-RC1 pour PGvector, Redis, Elasticsearch, Qdrant et OpenSearch.
+
+**Pourquoi c'est important :** Permet des cas d'usage multimodaux ou de réutiliser des embeddings existants sans recalcul.
+
+
 ## 2026-10-26
 
 **Résumé du jour.** Week-end calme : l'actualité se limite aux publications Spring du 23 octobre. Spring AI 2.1.0-RC1 apporte la mémoire de session et la confirmation des appels d'outils, avec des dépréciations à anticiper. Spring Boot 4.0.9 et Spring Cloud 2025.1.4 sont des versions de maintenance. Aucune alerte de sécurité vérifiée dans la fenêtre.

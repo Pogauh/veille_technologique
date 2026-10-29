@@ -1,5 +1,28 @@
 {
-  "date": "2026-10-28",
-  "resume_du_jour": "",
-  "items": []
+  "date": "2026-10-29",
+  "resume_du_jour": "Journée calme. Spring AI 2.1 (candidate à la release RC1) se précise avec deux articles du 28 octobre : un modèle de messages en parties ordonnées pour conserver le raisonnement des modèles, et la possibilité d'enregistrer ses propres embeddings. Aucune alerte de sécurité Spring nouvelle sur la période.",
+  "items": [
+    {
+      "titre": "Spring AI 2.1 : des messages en parties pour préserver le raisonnement des modèles",
+      "url": "https://spring.io/blog/2026/10/28/spring-ai-message-parts-reasoning-replay",
+      "source": "spring.io",
+      "date_publication": "2026-10-28",
+      "theme": "java",
+      "resume": "Spring AI 2.1 remplace le modèle chaîne de texte plus listes annexes par une liste ordonnée de parties de message, afin de renvoyer à l'identique les blocs de raisonnement et les signatures des fournisseurs. Cela concerne les principaux modèles de chat, et une mémoire de session persiste ces parties, tandis que ChatMemory devient obsolète. La version 2.1.0-RC1 était disponible à la publication.",
+      "importance": "Les équipes qui utilisent ChatMemory devront prévoir une migration vers la mémoire de session.",
+      "action": "surveiller",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring AI 2.1 : stocker ses propres embeddings avec upsert",
+      "url": "https://spring.io/blog/2026/10/28/spring-ai-upsert-own-embeddings",
+      "source": "spring.io",
+      "date_publication": "2026-10-28",
+      "theme": "java",
+      "resume": "Spring AI 2.1 ajoute une méthode upsert pour enregistrer des documents avec des vecteurs déjà calculés (image, audio, vidéo) sans passer par le modèle d'embedding du store. Une surcharge de similaritySearch accepte aussi un vecteur de requête précalculé. Disponible en 2.1.0-RC1 pour PGvector, Redis, Elasticsearch, Qdrant et OpenSearch.",
+      "importance": "Permet des cas d'usage multimodaux ou de réutiliser des embeddings existants sans recalcul.",
+      "action": "tester",
+      "confiance": "elevee"
+    }
+  ]
 }
