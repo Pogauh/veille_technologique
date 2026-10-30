@@ -2,6 +2,19 @@
   "version": 1,
   "items": [
     {
+      "titre": "Spring Modulith 2.2 RC1 : dépendances de modules, événements et tests",
+      "url": "https://spring.io/blog/2026/10/23/spring-modulith-2-2-rc1-2-1-2-2-0-9-and-1-4-14-released",
+      "source": "spring.io",
+      "date_publication": "2026-10-23",
+      "theme": "hexagonal",
+      "resume": "La première release candidate de Spring Modulith 2.2 assouplit la déclaration des dépendances autorisées entre modules, ajoute l'état « abandonné » pour les publications d'événements et exécute la complétion dans la transaction du listener. Elle vise Spring Boot 4.2 et ArchUnit 1.5.1. Les versions 2.1.2, 2.0.9 et 1.4.14 corrigent le registre de publications ; la 1.4.14 est la dernière de la branche 1.x.",
+      "importance": "Utile pour vérifier les frontières de modules ; les équipes encore en 1.x doivent planifier la migration vers la 2.x.",
+      "action": "lire",
+      "confiance": "elevee",
+      "id": "0584b5caf44f0cd77d1e369b7c45627085735832",
+      "date_ajout": "2026-10-30"
+    },
+    {
       "titre": "Spring AI 2.1 : des messages en parties pour préserver le raisonnement des modèles",
       "url": "https://spring.io/blog/2026/10/28/spring-ai-message-parts-reasoning-replay",
       "source": "spring.io",
@@ -224,6 +237,10 @@
     }
   ],
   "syntheses": [
+    {
+      "date": "2026-10-30",
+      "resume": "Journée calme : aucune annonce Java, C4 ou sécurité vérifiable dans la fenêtre de 24 h. Seule retenue, un article de fond récent : Spring Modulith 2.2 RC1, utile pour les équipes qui appliquent une architecture modulaire ou hexagonale."
+    },
     {
       "date": "2026-10-29",
       "resume": "Journée calme. Spring AI 2.1 (candidate à la release RC1) se précise avec deux articles du 28 octobre : un modèle de messages en parties ordonnées pour conserver le raisonnement des modèles, et la possibilité d'enregistrer ses propres embeddings. Aucune alerte de sécurité Spring nouvelle sur la période."
