@@ -2,6 +2,19 @@
   "version": 1,
   "items": [
     {
+      "titre": "Spring Cloud 2026.0.0-RC2 (Paddington) disponible",
+      "url": "https://spring.io/blog/2026/11/05/spring-cloud-2026-0-0-RC2-has-been-released",
+      "source": "spring.io",
+      "date_publication": "2026-11-05",
+      "theme": "java",
+      "resume": "La deuxième release candidate du train Spring Cloud 2026.0.0 est publiée. La plupart des modules (Gateway, Config, OpenFeign, Stream, Circuitbreaker, Kubernetes…) passent en 5.1.0-RC2, et le train repose sur Spring Boot 4.2.0-RC2.",
+      "importance": "Permet de tester dès maintenant la compatibilité des applications Spring Cloud avec Spring Boot 4.2 avant la version finale.",
+      "action": "tester",
+      "confiance": "elevee",
+      "id": "ab77d4b5b67e0160356f329f32df3f17fbc6944f",
+      "date_ajout": "2026-11-06"
+    },
+    {
       "titre": "Spring Modulith 2.2 RC1 : dépendances de modules, événements et tests",
       "url": "https://spring.io/blog/2026/10/23/spring-modulith-2-2-rc1-2-1-2-2-0-9-and-1-4-14-released",
       "source": "spring.io",
@@ -237,6 +250,10 @@
     }
   ],
   "syntheses": [
+    {
+      "date": "2026-11-06",
+      "resume": "Journée calme. Seule nouveauté notable dans la fenêtre : la deuxième release candidate de Spring Cloud 2026.0.0, alignée sur Spring Boot 4.2.0-RC2. Aucune alerte de sécurité critique repérée sur le JDK, Spring, Log4j ou Jackson."
+    },
     {
       "date": "2026-10-30",
       "resume": "Journée calme : aucune annonce Java, C4 ou sécurité vérifiable dans la fenêtre de 24 h. Seule retenue, un article de fond récent : Spring Modulith 2.2 RC1, utile pour les équipes qui appliquent une architecture modulaire ou hexagonale."

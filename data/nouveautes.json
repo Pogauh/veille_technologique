@@ -1,5 +1,17 @@
 {
-  "date": "2026-11-05",
-  "resume_du_jour": "",
-  "items": []
+  "date": "2026-11-06",
+  "resume_du_jour": "Journée calme. Seule nouveauté notable dans la fenêtre : la deuxième release candidate de Spring Cloud 2026.0.0, alignée sur Spring Boot 4.2.0-RC2. Aucune alerte de sécurité critique repérée sur le JDK, Spring, Log4j ou Jackson.",
+  "items": [
+    {
+      "titre": "Spring Cloud 2026.0.0-RC2 (Paddington) disponible",
+      "url": "https://spring.io/blog/2026/11/05/spring-cloud-2026-0-0-RC2-has-been-released",
+      "source": "spring.io",
+      "date_publication": "2026-11-05",
+      "theme": "java",
+      "resume": "La deuxième release candidate du train Spring Cloud 2026.0.0 est publiée. La plupart des modules (Gateway, Config, OpenFeign, Stream, Circuitbreaker, Kubernetes…) passent en 5.1.0-RC2, et le train repose sur Spring Boot 4.2.0-RC2.",
+      "importance": "Permet de tester dès maintenant la compatibilité des applications Spring Cloud avec Spring Boot 4.2 avant la version finale.",
+      "action": "tester",
+      "confiance": "elevee"
+    }
+  ]
 }

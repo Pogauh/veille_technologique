@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-06
+
+**Résumé du jour.** Journée calme. Seule nouveauté notable dans la fenêtre : la deuxième release candidate de Spring Cloud 2026.0.0, alignée sur Spring Boot 4.2.0-RC2. Aucune alerte de sécurité critique repérée sur le JDK, Spring, Log4j ou Jackson.
+
+
+### Java
+
+#### [Spring Cloud 2026.0.0-RC2 (Paddington) disponible](https://spring.io/blog/2026/11/05/spring-cloud-2026-0-0-RC2-has-been-released)
+*spring.io · publié le 2026-11-05 · confiance : élevée · action : tester*
+
+La deuxième release candidate du train Spring Cloud 2026.0.0 est publiée. La plupart des modules (Gateway, Config, OpenFeign, Stream, Circuitbreaker, Kubernetes…) passent en 5.1.0-RC2, et le train repose sur Spring Boot 4.2.0-RC2.
+
+**Pourquoi c'est important :** Permet de tester dès maintenant la compatibilité des applications Spring Cloud avec Spring Boot 4.2 avant la version finale.
+
+
 ## 2026-10-30
 
 **Résumé du jour.** Journée calme : aucune annonce Java, C4 ou sécurité vérifiable dans la fenêtre de 24 h. Seule retenue, un article de fond récent : Spring Modulith 2.2 RC1, utile pour les équipes qui appliquent une architecture modulaire ou hexagonale.
