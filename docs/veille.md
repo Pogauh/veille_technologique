@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-07
+
+**Résumé du jour.** Journée calme. Spring Boot 4.2.0-RC2 est disponible, dernière étape avant la version finale attendue en novembre. Aucune alerte de sécurité nouvelle repérée sur les sources accessibles.
+
+
+### Java
+
+#### [Spring Boot 4.2.0-RC2 disponible sur Maven Central](https://spring.io/blog/2026/11/06/spring-boot-4-2-0-RC2-available-now)
+*spring.io · publié le 2026-11-06 · confiance : élevée · action : tester*
+
+Le deuxième release candidate de Spring Boot 4.2 regroupe 99 améliorations, mises à jour de dépendances et corrections. Parmi les changements cités : prise en charge de l'en-tête X-Forwarded-Prefix avec Reactor Netty et application de spring.data.redis.database aux connexions Redis maître/réplica.
+
+**Pourquoi c'est important :** Permet de tester dès maintenant la compatibilité de nos applications avant la sortie finale de la 4.2.
+
+
 ## 2026-11-06
 
 **Résumé du jour.** Journée calme. Seule nouveauté notable dans la fenêtre : la deuxième release candidate de Spring Cloud 2026.0.0, alignée sur Spring Boot 4.2.0-RC2. Aucune alerte de sécurité critique repérée sur le JDK, Spring, Log4j ou Jackson.

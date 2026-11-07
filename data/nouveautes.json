@@ -1,15 +1,15 @@
 {
-  "date": "2026-11-06",
-  "resume_du_jour": "Journée calme. Seule nouveauté notable dans la fenêtre : la deuxième release candidate de Spring Cloud 2026.0.0, alignée sur Spring Boot 4.2.0-RC2. Aucune alerte de sécurité critique repérée sur le JDK, Spring, Log4j ou Jackson.",
+  "date": "2026-11-07",
+  "resume_du_jour": "Journée calme. Spring Boot 4.2.0-RC2 est disponible, dernière étape avant la version finale attendue en novembre. Aucune alerte de sécurité nouvelle repérée sur les sources accessibles.",
   "items": [
     {
-      "titre": "Spring Cloud 2026.0.0-RC2 (Paddington) disponible",
-      "url": "https://spring.io/blog/2026/11/05/spring-cloud-2026-0-0-RC2-has-been-released",
+      "titre": "Spring Boot 4.2.0-RC2 disponible sur Maven Central",
+      "url": "https://spring.io/blog/2026/11/06/spring-boot-4-2-0-RC2-available-now",
       "source": "spring.io",
-      "date_publication": "2026-11-05",
+      "date_publication": "2026-11-06",
       "theme": "java",
-      "resume": "La deuxième release candidate du train Spring Cloud 2026.0.0 est publiée. La plupart des modules (Gateway, Config, OpenFeign, Stream, Circuitbreaker, Kubernetes…) passent en 5.1.0-RC2, et le train repose sur Spring Boot 4.2.0-RC2.",
-      "importance": "Permet de tester dès maintenant la compatibilité des applications Spring Cloud avec Spring Boot 4.2 avant la version finale.",
+      "resume": "Le deuxième release candidate de Spring Boot 4.2 regroupe 99 améliorations, mises à jour de dépendances et corrections. Parmi les changements cités : prise en charge de l'en-tête X-Forwarded-Prefix avec Reactor Netty et application de spring.data.redis.database aux connexions Redis maître/réplica.",
+      "importance": "Permet de tester dès maintenant la compatibilité de nos applications avant la sortie finale de la 4.2.",
       "action": "tester",
       "confiance": "elevee"
     }
