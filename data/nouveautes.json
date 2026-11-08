@@ -1,17 +1,1 @@
-{
-  "date": "2026-11-07",
-  "resume_du_jour": "Journée calme. Spring Boot 4.2.0-RC2 est disponible, dernière étape avant la version finale attendue en novembre. Aucune alerte de sécurité nouvelle repérée sur les sources accessibles.",
-  "items": [
-    {
-      "titre": "Spring Boot 4.2.0-RC2 disponible sur Maven Central",
-      "url": "https://spring.io/blog/2026/11/06/spring-boot-4-2-0-RC2-available-now",
-      "source": "spring.io",
-      "date_publication": "2026-11-06",
-      "theme": "java",
-      "resume": "Le deuxième release candidate de Spring Boot 4.2 regroupe 99 améliorations, mises à jour de dépendances et corrections. Parmi les changements cités : prise en charge de l'en-tête X-Forwarded-Prefix avec Reactor Netty et application de spring.data.redis.database aux connexions Redis maître/réplica.",
-      "importance": "Permet de tester dès maintenant la compatibilité de nos applications avant la sortie finale de la 4.2.",
-      "action": "tester",
-      "confiance": "elevee"
-    }
-  ]
-}
+{"date":"2026-11-08","resume_du_jour":"","items":[]}
