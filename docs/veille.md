@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-10
+
+**Résumé du jour.** Journée calme. Seule nouveauté notable dans la fenêtre : Spring AI 2.1.0-RC2 (9 novembre), construite sur Spring Boot 4.2.0-RC2, avec plusieurs ruptures à anticiper pour les équipes qui utilisent Anthropic ou Bedrock. Aucune alerte de sécurité nouvelle repérée.
+
+
+### Java
+
+#### [Spring AI 2.1.0-RC2 : nouvelle API DecisionModel et points de migration](https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now)
+*spring.io · publié le 2026-11-09 · confiance : élevée · action : tester*
+
+Deuxième release candidate de Spring AI 2.1 avant la GA, alignée sur Spring Boot 4.2.0-RC2. Elle ajoute l'API DecisionModel (réponses typées oui/non, choix, score), le streaming des arguments d'appels d'outils et un serveur MCP « modern ». Les notes de migration signalent des ruptures côté Anthropic (paramètres temperature/topP/topK rejetés, clé API en en-tête Bearer) et Typesense.
+
+**Pourquoi c'est important :** Les équipes utilisant Spring AI avec Anthropic, Bedrock ou Typesense doivent tester cette RC avant la GA pour anticiper les changements incompatibles.
+
+
 ## 2026-11-07
 
 **Résumé du jour.** Journée calme. Spring Boot 4.2.0-RC2 est disponible, dernière étape avant la version finale attendue en novembre. Aucune alerte de sécurité nouvelle repérée sur les sources accessibles.
