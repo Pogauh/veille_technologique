@@ -1,16 +1,16 @@
 {
-  "date": "2026-11-10",
-  "resume_du_jour": "Journée calme. Seule nouveauté notable dans la fenêtre : Spring AI 2.1.0-RC2 (9 novembre), construite sur Spring Boot 4.2.0-RC2, avec plusieurs ruptures à anticiper pour les équipes qui utilisent Anthropic ou Bedrock. Aucune alerte de sécurité nouvelle repérée.",
+  "date": "2026-11-11",
+  "resume_du_jour": "Journée calme. Spring annonce le transfert du projet Spring for Apache Pulsar vers la fondation Apache : les équipes qui l'utilisent devront changer de coordonnées Maven et de packages pour recevoir les futures évolutions. Aucun nouvel avis de sécurité Spring publié depuis le 20 août 2026.",
   "items": [
     {
-      "titre": "Spring AI 2.1.0-RC2 : nouvelle API DecisionModel et points de migration",
-      "url": "https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now",
+      "titre": "Spring for Apache Pulsar déménage chez Apache Pulsar",
+      "url": "https://spring.io/blog/2026/11/10/spring-pulsar-new-home-asf",
       "source": "spring.io",
-      "date_publication": "2026-11-09",
+      "date_publication": "2026-11-10",
       "theme": "java",
-      "resume": "Deuxième release candidate de Spring AI 2.1 avant la GA, alignée sur Spring Boot 4.2.0-RC2. Elle ajoute l'API DecisionModel (réponses typées oui/non, choix, score), le streaming des arguments d'appels d'outils et un serveur MCP « modern ». Les notes de migration signalent des ruptures côté Anthropic (paramètres temperature/topP/topK rejetés, clé API en en-tête Bearer) et Typesense.",
-      "importance": "Les équipes utilisant Spring AI avec Anthropic, Bedrock ou Typesense doivent tester cette RC avant la GA pour anticiper les changements incompatibles.",
-      "action": "tester",
+      "resume": "Le projet Spring for Apache Pulsar devient un sous-projet d'Apache Pulsar, sous le nom Apache Pulsar support for Spring. Spring ne publiera plus de mises à jour après la version 2.0.8 (starter Boot) et après le binder Spring Cloud Stream 5.1.0. Les applications existantes continuent de fonctionner avec ces versions.",
+      "importance": "Les équipes utilisant Pulsar avec Spring doivent prévoir le changement de dépendances et d'imports pour continuer à recevoir correctifs et nouveautés.",
+      "action": "surveiller",
       "confiance": "elevee"
     }
   ]

@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-11
+
+**Résumé du jour.** Journée calme. Spring annonce le transfert du projet Spring for Apache Pulsar vers la fondation Apache : les équipes qui l'utilisent devront changer de coordonnées Maven et de packages pour recevoir les futures évolutions. Aucun nouvel avis de sécurité Spring publié depuis le 20 août 2026.
+
+
+### Java
+
+#### [Spring for Apache Pulsar déménage chez Apache Pulsar](https://spring.io/blog/2026/11/10/spring-pulsar-new-home-asf)
+*spring.io · publié le 2026-11-10 · confiance : élevée · action : surveiller*
+
+Le projet Spring for Apache Pulsar devient un sous-projet d'Apache Pulsar, sous le nom Apache Pulsar support for Spring. Spring ne publiera plus de mises à jour après la version 2.0.8 (starter Boot) et après le binder Spring Cloud Stream 5.1.0. Les applications existantes continuent de fonctionner avec ces versions.
+
+**Pourquoi c'est important :** Les équipes utilisant Pulsar avec Spring doivent prévoir le changement de dépendances et d'imports pour continuer à recevoir correctifs et nouveautés.
+
+
 ## 2026-11-10
 
 **Résumé du jour.** Journée calme. Seule nouveauté notable dans la fenêtre : Spring AI 2.1.0-RC2 (9 novembre), construite sur Spring Boot 4.2.0-RC2, avec plusieurs ruptures à anticiper pour les équipes qui utilisent Anthropic ou Bedrock. Aucune alerte de sécurité nouvelle repérée.
