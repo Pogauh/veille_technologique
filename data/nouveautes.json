@@ -1,17 +1,5 @@
 {
-  "date": "2026-11-11",
-  "resume_du_jour": "Journée calme. Spring annonce le transfert du projet Spring for Apache Pulsar vers la fondation Apache : les équipes qui l'utilisent devront changer de coordonnées Maven et de packages pour recevoir les futures évolutions. Aucun nouvel avis de sécurité Spring publié depuis le 20 août 2026.",
-  "items": [
-    {
-      "titre": "Spring for Apache Pulsar déménage chez Apache Pulsar",
-      "url": "https://spring.io/blog/2026/11/10/spring-pulsar-new-home-asf",
-      "source": "spring.io",
-      "date_publication": "2026-11-10",
-      "theme": "java",
-      "resume": "Le projet Spring for Apache Pulsar devient un sous-projet d'Apache Pulsar, sous le nom Apache Pulsar support for Spring. Spring ne publiera plus de mises à jour après la version 2.0.8 (starter Boot) et après le binder Spring Cloud Stream 5.1.0. Les applications existantes continuent de fonctionner avec ces versions.",
-      "importance": "Les équipes utilisant Pulsar avec Spring doivent prévoir le changement de dépendances et d'imports pour continuer à recevoir correctifs et nouveautés.",
-      "action": "surveiller",
-      "confiance": "elevee"
-    }
-  ]
+  "date": "2026-11-12",
+  "resume_du_jour": "",
+  "items": []
 }
