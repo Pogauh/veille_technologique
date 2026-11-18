@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-18
+
+**Résumé du jour.** Une seule information notable dans la fenêtre : la newsletter Spring du 18 novembre signale une nouvelle faille Java surnommée « Java4Shell » et appelle à mettre à jour les JVM. Aucun identifiant CVE ni version affectée n'a pu être vérifié (le write-up JFrog est inaccessible depuis cet environnement). Spring Boot 4.2 et Framework 7.1 sont annoncés pour le 19 novembre mais pas encore publiés.
+
+
+### Sécurité
+
+#### [Alerte « Java4Shell » : la newsletter Spring appelle à mettre à jour les JVM](https://spring.io/blog/2026/11/18/this-week-in-spring-november-18th-2026)
+*spring.io · publié le 2026-11-18 · confiance : faible · action : surveiller*
+
+La newsletter hebdomadaire de Spring mentionne une nouvelle vulnérabilité Java surnommée « Java4Shell », jugée sérieuse, et recommande de mettre à jour les JVM. Elle renvoie vers une analyse de JFrog. Information à confirmer : ni CVE, ni versions touchées, ni correctif n'ont pu être vérifiés dans une source primaire.
+
+**Pourquoi c'est important :** Une faille de type exécution de code sur la JVM concernerait tous nos services ; il faut suivre les avis Oracle/OpenJDK et préparer une mise à jour.
+
+
 ## 2026-11-11
 
 **Résumé du jour.** Journée calme. Spring annonce le transfert du projet Spring for Apache Pulsar vers la fondation Apache : les équipes qui l'utilisent devront changer de coordonnées Maven et de packages pour recevoir les futures évolutions. Aucun nouvel avis de sécurité Spring publié depuis le 20 août 2026.

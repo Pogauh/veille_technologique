@@ -1,5 +1,17 @@
 {
-  "date": "2026-11-17",
-  "resume_du_jour": "",
-  "items": []
+  "date": "2026-11-18",
+  "resume_du_jour": "Une seule information notable dans la fenêtre : la newsletter Spring du 18 novembre signale une nouvelle faille Java surnommée « Java4Shell » et appelle à mettre à jour les JVM. Aucun identifiant CVE ni version affectée n'a pu être vérifié (le write-up JFrog est inaccessible depuis cet environnement). Spring Boot 4.2 et Framework 7.1 sont annoncés pour le 19 novembre mais pas encore publiés.",
+  "items": [
+    {
+      "titre": "Alerte « Java4Shell » : la newsletter Spring appelle à mettre à jour les JVM",
+      "url": "https://spring.io/blog/2026/11/18/this-week-in-spring-november-18th-2026",
+      "source": "spring.io",
+      "date_publication": "2026-11-18",
+      "theme": "securite",
+      "resume": "La newsletter hebdomadaire de Spring mentionne une nouvelle vulnérabilité Java surnommée « Java4Shell », jugée sérieuse, et recommande de mettre à jour les JVM. Elle renvoie vers une analyse de JFrog. Information à confirmer : ni CVE, ni versions touchées, ni correctif n'ont pu être vérifiés dans une source primaire.",
+      "importance": "Une faille de type exécution de code sur la JVM concernerait tous nos services ; il faut suivre les avis Oracle/OpenJDK et préparer une mise à jour.",
+      "action": "surveiller",
+      "confiance": "faible"
+    }
+  ]
 }
