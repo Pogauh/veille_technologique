@@ -3,6 +3,28 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-19
+
+**Résumé du jour.** Oracle a publié le 17 novembre son Critical Patch Update pour Java SE (11 failles annoncées, builds corrigés dont 27.0.1.1, 25.0.5.1, 21.0.13.1, 17.0.21.1). Une faille baptisée « Java4Shell » circule et est jugée sérieuse par l'équipe Spring, mais ses détails ne sont pas confirmés par une source primaire accessible : à surveiller.
+
+
+### Sécurité
+
+#### [« Java4Shell » : faille Java jugée sérieuse, détails à confirmer](https://research.jfrog.com/post/java4shell-vulnerability/)
+*research.jfrog.com · publié le 2026-11-18 · confiance : faible · action : surveiller*
+
+Le billet hebdomadaire de Spring du 18 novembre appelle à mettre à jour les JVM et qualifie le CVE « Java4Shell » de préoccupant, en renvoyant vers une analyse de JFrog. Des médias secondaires évoquent une exécution de code à distance dans OpenJDK 17 avec un identifiant CVE et un score non recoupés. Aucun identifiant, version ni correctif n'a pu être vérifié : information à confirmer.
+
+**Pourquoi c'est important :** Possible RCE côté JDK : il faut suivre les avis des éditeurs de JDK et appliquer le CPU en attendant.
+
+#### [Oracle CPU de novembre 2026 : 11 failles Java SE et nouveaux builds corrigés](https://www.oracle.com/security-alerts/cspunov2026.html)
+*oracle.com · publié le 2026-11-17 · confiance : moyenne · action : corriger*
+
+Oracle annonce pour le 17 novembre 2026 des correctifs pour 11 vulnérabilités de Java SE, selon les relais secondaires toutes exploitables à distance sans authentification (score max rapporté : 8.1 en CVSS 3.1). Builds corrigés rapportés : 8u513, 11.0.33.1, 17.0.21.1, 21.0.13.1, 25.0.5.1 et 27.0.1.1. La page Oracle n'a pas pu être lue directement (403) : détails à confirmer.
+
+**Pourquoi c'est important :** Tous les JDK Oracle en production (8 à 27) sont concernés ; les versions précédentes ne doivent plus être utilisées.
+
+
 ## 2026-11-18
 
 **Résumé du jour.** Une seule information notable dans la fenêtre : la newsletter Spring du 18 novembre signale une nouvelle faille Java surnommée « Java4Shell » et appelle à mettre à jour les JVM. Aucun identifiant CVE ni version affectée n'a pu être vérifié (le write-up JFrog est inaccessible depuis cet environnement). Spring Boot 4.2 et Framework 7.1 sont annoncés pour le 19 novembre mais pas encore publiés.
