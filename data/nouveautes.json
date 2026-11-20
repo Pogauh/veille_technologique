@@ -1,28 +1,50 @@
 {
-  "date": "2026-11-19",
-  "resume_du_jour": "Oracle a publié le 17 novembre son Critical Patch Update pour Java SE (11 failles annoncées, builds corrigés dont 27.0.1.1, 25.0.5.1, 21.0.13.1, 17.0.21.1). Une faille baptisée « Java4Shell » circule et est jugée sérieuse par l'équipe Spring, mais ses détails ne sont pas confirmés par une source primaire accessible : à surveiller.",
+  "date": "2026-11-20",
+  "resume_du_jour": "Journée dominée par la vague de releases Spring du 19 novembre. Spring Integration livre 12 correctifs de sécurité (7.0.8, 7.1.3, 7.2.0), dont plusieurs désérialisations non sûres : mise à jour prioritaire si vous utilisez FTP/SFTP, JDBC, MongoDB, Redis ou AMQP. Spring Batch 6.1 et Spring AMQP 4.2 sont aussi disponibles. Rien de notable détecté côté architecture hexagonale ou C4 sur la fenêtre.",
   "items": [
     {
-      "titre": "Oracle CPU de novembre 2026 : 11 failles Java SE et nouveaux builds corrigés",
-      "url": "https://www.oracle.com/security-alerts/cspunov2026.html",
-      "source": "oracle.com",
-      "date_publication": "2026-11-17",
+      "titre": "Spring Integration : 12 CVE corrigées dans les versions 7.0.8, 7.1.3 et 7.2.0",
+      "url": "https://spring.io/blog/2026/11/19/spring-integration-7-2-0-available",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
       "theme": "securite",
-      "resume": "Oracle annonce pour le 17 novembre 2026 des correctifs pour 11 vulnérabilités de Java SE, selon les relais secondaires toutes exploitables à distance sans authentification (score max rapporté : 8.1 en CVSS 3.1). Builds corrigés rapportés : 8u513, 11.0.33.1, 17.0.21.1, 21.0.13.1, 25.0.5.1 et 27.0.1.1. La page Oracle n'a pas pu être lue directement (403) : détails à confirmer.",
-      "importance": "Tous les JDK Oracle en production (8 à 27) sont concernés ; les versions précédentes ne doivent plus être utilisées.",
+      "resume": "Les correctifs touchent les adaptateurs SFTP/FTP/FTPS, MQTT, AMQP, XMPP et les message stores JDBC, MongoDB et Redis. On y trouve des contournements de liste d'autorisation de désérialisation (CVE-2026-59383, CVE-2026-59438), une désérialisation Java non sûre côté Redis (CVE-2026-59444), une injection de commande FTP (CVE-2026-59416) et un défaut de vérification de certificat FTPS (CVE-2026-59364). Les versions affectées et la gravité par CVE ne sont pas détaillées dans l'annonce : consulter les avis individuels. Correctifs : 7.0.8, 7.1.3 ou 7.2.0.",
+      "importance": "Toute application utilisant Spring Integration avec ces adaptateurs ou message stores est potentiellement exposée.",
       "action": "corriger",
-      "confiance": "moyenne"
+      "confiance": "elevee"
     },
     {
-      "titre": "« Java4Shell » : faille Java jugée sérieuse, détails à confirmer",
-      "url": "https://research.jfrog.com/post/java4shell-vulnerability/",
-      "source": "research.jfrog.com",
-      "date_publication": "2026-11-18",
-      "theme": "securite",
-      "resume": "Le billet hebdomadaire de Spring du 18 novembre appelle à mettre à jour les JVM et qualifie le CVE « Java4Shell » de préoccupant, en renvoyant vers une analyse de JFrog. Des médias secondaires évoquent une exécution de code à distance dans OpenJDK 17 avec un identifiant CVE et un score non recoupés. Aucun identifiant, version ni correctif n'a pu être vérifié : information à confirmer.",
-      "importance": "Possible RCE côté JDK : il faut suivre les avis des éditeurs de JDK et appliquer le CPU en attendant.",
-      "action": "surveiller",
-      "confiance": "faible"
+      "titre": "Spring Integration 7.2.0 : module MQTT HiveMQ, share groups Kafka et allow-list restrictive",
+      "url": "https://spring.io/blog/2026/11/19/spring-integration-7-2-0-available",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
+      "theme": "java",
+      "resume": "La version 7.2.0 ajoute un adaptateur pour les share groups Kafka, un nouveau module MQTT basé sur le client HiveMQ (le module Paho est déprécié pour suppression) et un sélecteur validant la charge utile. AllowListDeserializingConverter ne fait désormais confiance qu'à un jeu de types par défaut, ce qui peut casser des usages existants. La configuration HTTP sortante basée sur RestTemplate est dépréciée au profit de RestClient.",
+      "importance": "Le durcissement de la désérialisation et les dépréciations demandent de vérifier la compatibilité avant la montée de version.",
+      "action": "tester",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring Batch 6.1 GA : @JobParameter, PageableItemReader et gains de performance",
+      "url": "https://spring.io/blog/2026/11/19/spring-batch-6-1-0-available-now",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
+      "theme": "java",
+      "resume": "Spring Batch 6.1 s'appuie sur Spring Framework 7.1.0 et Spring Data 2026.1.0. Il introduit l'annotation @JobParameter, un PageableItemReader typé, la prise en charge de JSON Lines et des DAO JDBC migrés vers JdbcClient. Il apporte aussi des changements incompatibles (types de retour des builders, constructeurs DAO supprimés) et déprécie Derby.",
+      "importance": "Une migration depuis 6.0 nécessite de revoir les builders et DAO personnalisés.",
+      "action": "migrer",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring AMQP 4.2.0 : messages différés natifs RabbitMQ 4.4 et correctifs de 3 CVE",
+      "url": "https://spring.io/blog/2026/11/19/spring-amqp-4-2-0-available",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
+      "theme": "java",
+      "resume": "La version 4.2.0 prend en charge la livraison différée native des quorum queues RabbitMQ 4.4+ via setDeliveryTime, et déclare plusieurs exchanges, queues et bindings en un appel. Elle apporte aussi un batching par listener et une vérification de nom d'hôte TLS automatique. Les patchs 4.1.3 et 4.0.7 corrigent CVE-2026-59395, CVE-2026-59403 et CVE-2026-59404 (détails non précisés dans l'annonce).",
+      "importance": "Les correctifs de sécurité justifient la mise à jour des projets utilisant Spring AMQP.",
+      "action": "corriger",
+      "confiance": "elevee"
     }
   ]
 }

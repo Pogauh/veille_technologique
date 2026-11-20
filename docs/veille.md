@@ -3,6 +3,38 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-20
+
+**Résumé du jour.** Journée dominée par la vague de releases Spring du 19 novembre. Spring Integration livre 12 correctifs de sécurité (7.0.8, 7.1.3, 7.2.0), dont plusieurs désérialisations non sûres : mise à jour prioritaire si vous utilisez FTP/SFTP, JDBC, MongoDB, Redis ou AMQP. Spring Batch 6.1 et Spring AMQP 4.2 sont aussi disponibles. Rien de notable détecté côté architecture hexagonale ou C4 sur la fenêtre.
+
+
+### Java
+
+#### [Spring Batch 6.1 GA : @JobParameter, PageableItemReader et gains de performance](https://spring.io/blog/2026/11/19/spring-batch-6-1-0-available-now)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : migrer*
+
+Spring Batch 6.1 s'appuie sur Spring Framework 7.1.0 et Spring Data 2026.1.0. Il introduit l'annotation @JobParameter, un PageableItemReader typé, la prise en charge de JSON Lines et des DAO JDBC migrés vers JdbcClient. Il apporte aussi des changements incompatibles (types de retour des builders, constructeurs DAO supprimés) et déprécie Derby.
+
+**Pourquoi c'est important :** Une migration depuis 6.0 nécessite de revoir les builders et DAO personnalisés.
+
+#### [Spring AMQP 4.2.0 : messages différés natifs RabbitMQ 4.4 et correctifs de 3 CVE](https://spring.io/blog/2026/11/19/spring-amqp-4-2-0-available)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+La version 4.2.0 prend en charge la livraison différée native des quorum queues RabbitMQ 4.4+ via setDeliveryTime, et déclare plusieurs exchanges, queues et bindings en un appel. Elle apporte aussi un batching par listener et une vérification de nom d'hôte TLS automatique. Les patchs 4.1.3 et 4.0.7 corrigent CVE-2026-59395, CVE-2026-59403 et CVE-2026-59404 (détails non précisés dans l'annonce).
+
+**Pourquoi c'est important :** Les correctifs de sécurité justifient la mise à jour des projets utilisant Spring AMQP.
+
+
+### Sécurité
+
+#### [Spring Integration : 12 CVE corrigées dans les versions 7.0.8, 7.1.3 et 7.2.0](https://spring.io/blog/2026/11/19/spring-integration-7-2-0-available)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+Les correctifs touchent les adaptateurs SFTP/FTP/FTPS, MQTT, AMQP, XMPP et les message stores JDBC, MongoDB et Redis. On y trouve des contournements de liste d'autorisation de désérialisation (CVE-2026-59383, CVE-2026-59438), une désérialisation Java non sûre côté Redis (CVE-2026-59444), une injection de commande FTP (CVE-2026-59416) et un défaut de vérification de certificat FTPS (CVE-2026-59364). Les versions affectées et la gravité par CVE ne sont pas détaillées dans l'annonce : consulter les avis individuels. Correctifs : 7.0.8, 7.1.3 ou 7.2.0.
+
+**Pourquoi c'est important :** Toute application utilisant Spring Integration avec ces adaptateurs ou message stores est potentiellement exposée.
+
+
 ## 2026-11-19
 
 **Résumé du jour.** Oracle a publié le 17 novembre son Critical Patch Update pour Java SE (11 failles annoncées, builds corrigés dont 27.0.1.1, 25.0.5.1, 21.0.13.1, 17.0.21.1). Une faille baptisée « Java4Shell » circule et est jugée sérieuse par l'équipe Spring, mais ses détails ne sont pas confirmés par une source primaire accessible : à surveiller.
