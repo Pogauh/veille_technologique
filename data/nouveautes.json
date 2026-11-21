@@ -1,49 +1,49 @@
 {
-  "date": "2026-11-20",
-  "resume_du_jour": "Journée dominée par la vague de releases Spring du 19 novembre. Spring Integration livre 12 correctifs de sécurité (7.0.8, 7.1.3, 7.2.0), dont plusieurs désérialisations non sûres : mise à jour prioritaire si vous utilisez FTP/SFTP, JDBC, MongoDB, Redis ou AMQP. Spring Batch 6.1 et Spring AMQP 4.2 sont aussi disponibles. Rien de notable détecté côté architecture hexagonale ou C4 sur la fenêtre.",
+  "date": "2026-11-21",
+  "resume_du_jour": "Le 20 novembre, Spring publie Spring Cloud 2026.0.0 (base Spring Boot 4.2.0) et Spring AI 2.1.0, deux versions qui embarquent des correctifs de sécurité modifiant des comportements par défaut. Spring Boot 4.1.3 et 4.0.10 sont aussi disponibles. Rien de notable détecté côté architecture hexagonale ou C4 sur la fenêtre.",
   "items": [
     {
-      "titre": "Spring Integration : 12 CVE corrigées dans les versions 7.0.8, 7.1.3 et 7.2.0",
-      "url": "https://spring.io/blog/2026/11/19/spring-integration-7-2-0-available",
+      "titre": "Spring Cloud 2026.0.0 (Paddington) : correctifs de sécurité aux effets sur les comportements par défaut",
+      "url": "https://spring.io/blog/2026/11/20/spring-cloud-2026-0-0-has-been-released",
       "source": "spring.io",
-      "date_publication": "2026-11-19",
+      "date_publication": "2026-11-20",
       "theme": "securite",
-      "resume": "Les correctifs touchent les adaptateurs SFTP/FTP/FTPS, MQTT, AMQP, XMPP et les message stores JDBC, MongoDB et Redis. On y trouve des contournements de liste d'autorisation de désérialisation (CVE-2026-59383, CVE-2026-59438), une désérialisation Java non sûre côté Redis (CVE-2026-59444), une injection de commande FTP (CVE-2026-59416) et un défaut de vérification de certificat FTPS (CVE-2026-59364). Les versions affectées et la gravité par CVE ne sont pas détaillées dans l'annonce : consulter les avis individuels. Correctifs : 7.0.8, 7.1.3 ou 7.2.0.",
-      "importance": "Toute application utilisant Spring Integration avec ces adaptateurs ou message stores est potentiellement exposée.",
-      "action": "corriger",
-      "confiance": "elevee"
-    },
-    {
-      "titre": "Spring Integration 7.2.0 : module MQTT HiveMQ, share groups Kafka et allow-list restrictive",
-      "url": "https://spring.io/blog/2026/11/19/spring-integration-7-2-0-available",
-      "source": "spring.io",
-      "date_publication": "2026-11-19",
-      "theme": "java",
-      "resume": "La version 7.2.0 ajoute un adaptateur pour les share groups Kafka, un nouveau module MQTT basé sur le client HiveMQ (le module Paho est déprécié pour suppression) et un sélecteur validant la charge utile. AllowListDeserializingConverter ne fait désormais confiance qu'à un jeu de types par défaut, ce qui peut casser des usages existants. La configuration HTTP sortante basée sur RestTemplate est dépréciée au profit de RestClient.",
-      "importance": "Le durcissement de la désérialisation et les dépréciations demandent de vérifier la compatibilité avant la montée de version.",
+      "resume": "La release train s'appuie sur Spring Boot 4.2.0 et intègre plusieurs correctifs de CVE qui changent les valeurs par défaut : le filtre WebSocket de Gateway impose désormais la même origine, et Config Server valide les clés d'hôte SSH des dépôts Git. Les numéros de CVE ne sont pas détaillés dans l'annonce : consulter les avis individuels.",
+      "importance": "Ces changements de comportement peuvent casser des routes WebSocket ou des dépôts Git de configuration lors de la montée de version.",
       "action": "tester",
       "confiance": "elevee"
     },
     {
-      "titre": "Spring Batch 6.1 GA : @JobParameter, PageableItemReader et gains de performance",
-      "url": "https://spring.io/blog/2026/11/19/spring-batch-6-1-0-available-now",
+      "titre": "Spring Cloud 2026.0.0 : Bus intégré à Stream, Gateway MVC WebSocket, dépréciations",
+      "url": "https://spring.io/blog/2026/11/20/spring-cloud-2026-0-0-has-been-released",
       "source": "spring.io",
-      "date_publication": "2026-11-19",
+      "date_publication": "2026-11-20",
       "theme": "java",
-      "resume": "Spring Batch 6.1 s'appuie sur Spring Framework 7.1.0 et Spring Data 2026.1.0. Il introduit l'annotation @JobParameter, un PageableItemReader typé, la prise en charge de JSON Lines et des DAO JDBC migrés vers JdbcClient. Il apporte aussi des changements incompatibles (types de retour des builders, constructeurs DAO supprimés) et déprécie Derby.",
-      "importance": "Une migration depuis 6.0 nécessite de revoir les builders et DAO personnalisés.",
+      "resume": "Spring Cloud Bus est absorbé par Spring Cloud Stream, Config Server gagne l'autorisation OAuth 2 et le backend Google Cloud Storage, et Gateway MVC prend en charge les WebSockets. Sont dépréciés les modules RSocket et gRPC de Spring Cloud Function, le binder Kafka réactif et Schema Registry ; le client Eureka n'utilise plus un builder @LoadBalanced.",
+      "importance": "Une migration vers Boot 4.2 devra tenir compte des dépréciations et du changement du client Eureka.",
       "action": "migrer",
       "confiance": "elevee"
     },
     {
-      "titre": "Spring AMQP 4.2.0 : messages différés natifs RabbitMQ 4.4 et correctifs de 3 CVE",
-      "url": "https://spring.io/blog/2026/11/19/spring-amqp-4-2-0-available",
+      "titre": "Spring AI 2.1.0 : 13 CVE corrigées, MCP sans état, nouvelle API de sessions",
+      "url": "https://spring.io/blog/2026/11/20/spring-ai-2-1-0-GA-available-now",
       "source": "spring.io",
-      "date_publication": "2026-11-19",
-      "theme": "java",
-      "resume": "La version 4.2.0 prend en charge la livraison différée native des quorum queues RabbitMQ 4.4+ via setDeliveryTime, et déclare plusieurs exchanges, queues et bindings en un appel. Elle apporte aussi un batching par listener et une vérification de nom d'hôte TLS automatique. Les patchs 4.1.3 et 4.0.7 corrigent CVE-2026-59395, CVE-2026-59403 et CVE-2026-59404 (détails non précisés dans l'annonce).",
-      "importance": "Les correctifs de sécurité justifient la mise à jour des projets utilisant Spring AMQP.",
+      "date_publication": "2026-11-20",
+      "theme": "securite",
+      "resume": "La version 2.1.0 (sur Spring Boot 4.2) corrige 13 CVE, reprises dans la 2.0.3 pour la branche 2.0. Certains correctifs changent le comportement depuis 2.0.2 ou antérieur : SemanticCacheScopeResolver requis, limite de 10 millions de caractères pour l'extraction Tika, échappement plus strict des filtres Typesense. Gravité et détail des CVE non précisés dans l'annonce.",
+      "importance": "Les projets Spring AI doivent monter en 2.0.3 ou 2.1.0 et vérifier les changements de comportement.",
       "action": "corriger",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring Boot 4.1.3 et 4.0.10 disponibles",
+      "url": "https://spring.io/blog/2026/11/20/spring-boot-4-1-3-available-now",
+      "source": "spring.io",
+      "date_publication": "2026-11-20",
+      "theme": "java",
+      "resume": "Spring Boot 4.1.3 regroupe 112 corrections de bugs, améliorations de documentation et mises à jour de dépendances. L'annonce ne mentionne ni CVE ni correctif de sécurité, et ne précise pas de notes de migration.",
+      "importance": "Mise à jour de maintenance à intégrer dans le cycle normal de patch des branches 4.1 et 4.0.",
+      "action": "migrer",
       "confiance": "elevee"
     }
   ]

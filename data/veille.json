@@ -2,6 +2,45 @@
   "version": 1,
   "items": [
     {
+      "titre": "Spring Cloud 2026.0.0 (Paddington) : correctifs de sécurité aux effets sur les comportements par défaut",
+      "url": "https://spring.io/blog/2026/11/20/spring-cloud-2026-0-0-has-been-released",
+      "source": "spring.io",
+      "date_publication": "2026-11-20",
+      "theme": "securite",
+      "resume": "La release train s'appuie sur Spring Boot 4.2.0 et intègre plusieurs correctifs de CVE qui changent les valeurs par défaut : le filtre WebSocket de Gateway impose désormais la même origine, et Config Server valide les clés d'hôte SSH des dépôts Git. Les numéros de CVE ne sont pas détaillés dans l'annonce : consulter les avis individuels.",
+      "importance": "Ces changements de comportement peuvent casser des routes WebSocket ou des dépôts Git de configuration lors de la montée de version.",
+      "action": "tester",
+      "confiance": "elevee",
+      "id": "6521a2df1fc9bf426255c6c5c211f8824e788fab",
+      "date_ajout": "2026-11-21"
+    },
+    {
+      "titre": "Spring AI 2.1.0 : 13 CVE corrigées, MCP sans état, nouvelle API de sessions",
+      "url": "https://spring.io/blog/2026/11/20/spring-ai-2-1-0-GA-available-now",
+      "source": "spring.io",
+      "date_publication": "2026-11-20",
+      "theme": "securite",
+      "resume": "La version 2.1.0 (sur Spring Boot 4.2) corrige 13 CVE, reprises dans la 2.0.3 pour la branche 2.0. Certains correctifs changent le comportement depuis 2.0.2 ou antérieur : SemanticCacheScopeResolver requis, limite de 10 millions de caractères pour l'extraction Tika, échappement plus strict des filtres Typesense. Gravité et détail des CVE non précisés dans l'annonce.",
+      "importance": "Les projets Spring AI doivent monter en 2.0.3 ou 2.1.0 et vérifier les changements de comportement.",
+      "action": "corriger",
+      "confiance": "elevee",
+      "id": "913a0c1689ffb48d410c39aa01325fd05042c5c0",
+      "date_ajout": "2026-11-21"
+    },
+    {
+      "titre": "Spring Boot 4.1.3 et 4.0.10 disponibles",
+      "url": "https://spring.io/blog/2026/11/20/spring-boot-4-1-3-available-now",
+      "source": "spring.io",
+      "date_publication": "2026-11-20",
+      "theme": "java",
+      "resume": "Spring Boot 4.1.3 regroupe 112 corrections de bugs, améliorations de documentation et mises à jour de dépendances. L'annonce ne mentionne ni CVE ni correctif de sécurité, et ne précise pas de notes de migration.",
+      "importance": "Mise à jour de maintenance à intégrer dans le cycle normal de patch des branches 4.1 et 4.0.",
+      "action": "migrer",
+      "confiance": "elevee",
+      "id": "f5738990b4d4341d6a8b785f1e6fc69b7a377e09",
+      "date_ajout": "2026-11-21"
+    },
+    {
       "titre": "Spring Integration : 12 CVE corrigées dans les versions 7.0.8, 7.1.3 et 7.2.0",
       "url": "https://spring.io/blog/2026/11/19/spring-integration-7-2-0-available",
       "source": "spring.io",
@@ -367,6 +406,10 @@
     }
   ],
   "syntheses": [
+    {
+      "date": "2026-11-21",
+      "resume": "Le 20 novembre, Spring publie Spring Cloud 2026.0.0 (base Spring Boot 4.2.0) et Spring AI 2.1.0, deux versions qui embarquent des correctifs de sécurité modifiant des comportements par défaut. Spring Boot 4.1.3 et 4.0.10 sont aussi disponibles. Rien de notable détecté côté architecture hexagonale ou C4 sur la fenêtre."
+    },
     {
       "date": "2026-11-20",
       "resume": "Journée dominée par la vague de releases Spring du 19 novembre. Spring Integration livre 12 correctifs de sécurité (7.0.8, 7.1.3, 7.2.0), dont plusieurs désérialisations non sûres : mise à jour prioritaire si vous utilisez FTP/SFTP, JDBC, MongoDB, Redis ou AMQP. Spring Batch 6.1 et Spring AMQP 4.2 sont aussi disponibles. Rien de notable détecté côté architecture hexagonale ou C4 sur la fenêtre."
