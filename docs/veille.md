@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-22
+
+**Résumé du jour.** Alerte critique : une faille d'exécution de code à distance (CVE-2026-59273) touche Spring Security via ELRequestMatcher ; mettre à jour vers 7.1.3 ou 7.0.9. Rien d'autre de vérifié aujourd'hui (dimanche).
+
+
+### Sécurité
+
+#### [Spring Security : exécution de code à distance via ELRequestMatcher (CVE-2026-59273)](https://spring.io/security/cve-2026-59273/)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+Faille critique (vecteur réseau, sans authentification) dans ELRequestMatcher de Spring Security : si une application lie une entrée externe à une propriété de ce type, elle est évaluée comme expression SpEL. Versions touchées : 7.1.0 à 7.1.2, 7.0.0 à 7.0.8, 6.5.0 à 6.5.12, 6.4.0 à 6.4.19, 5.8.0 à 5.8.28, 5.7.26 et antérieures. Correctifs open source : 7.1.3 et 7.0.9 ; les branches plus anciennes ne sont corrigées que via le support Enterprise.
+
+**Pourquoi c'est important :** Risque d'exécution de code à distance : vérifier l'usage d'ELRequestMatcher et mettre à jour les projets Spring Security.
+
+
 ## 2026-11-21
 
 **Résumé du jour.** Le 20 novembre, Spring publie Spring Cloud 2026.0.0 (base Spring Boot 4.2.0) et Spring AI 2.1.0, deux versions qui embarquent des correctifs de sécurité modifiant des comportements par défaut. Spring Boot 4.1.3 et 4.0.10 sont aussi disponibles. Rien de notable détecté côté architecture hexagonale ou C4 sur la fenêtre.
