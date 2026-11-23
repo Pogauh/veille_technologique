@@ -3,6 +3,45 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-23
+
+**Résumé du jour.** Week-end calme côté publications. Spring Security publie deux correctifs à priorité haute (WebAuthn et RSocket) et Spring Data Elasticsearch corrige une injection SpEL. Spring Boot 4.0.10 est disponible. Les dates indiquées sont celles des sources.
+
+
+### Java
+
+#### [Spring Boot 4.0.10 disponible](https://spring.io/blog/2026/11/20/spring-boot-4-0-10-available-now)
+*spring.io · publié le 2026-11-20 · confiance : élevée · action : migrer*
+
+La version corrective 4.0.10 regroupe 97 corrections de bugs, améliorations de documentation et montées de dépendances, et se trouve sur Maven Central. L'annonce ne mentionne aucun CVE ; le détail est dans les notes de version GitHub.
+
+**Pourquoi c'est important :** Permet de rester sur la branche 4.0 à jour, en vérifiant que la version de Spring Security embarquée contient les correctifs de la semaine.
+
+
+### Sécurité
+
+#### [Spring Data Elasticsearch : injection SpEL dans les requêtes @Query](https://spring.io/security/cve-2026-123886)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+CVE-2026-123886, gravité haute : dans les méthodes @Query en chaîne, les arguments sont insérés avant l'évaluation SpEL, ce qui permet d'exécuter du code avec une entrée non fiable. Versions touchées : 6.1.0 à 6.1.2 et 6.0.0 à 6.0.8. Correctifs : 6.1.3 et 6.0.9. À défaut, rejeter les entrées contenant #{ ou utiliser CriteriaQuery/NativeQuery.
+
+**Pourquoi c'est important :** Exécution de code possible sur les applications qui passent des saisies utilisateur à des @Query Elasticsearch.
+
+#### [Spring Security : le compteur de signature WebAuthn n'est pas contrôlé](https://spring.io/security/cve-2026-59330)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+CVE-2026-59330, gravité haute : un défaut interne empêche de transmettre le compteur stocké à la bibliothèque de vérification, si bien qu'un authentificateur cloné n'est pas détecté. Versions touchées : Spring Security 7.1.0 à 7.1.2 et 7.0.0 à 7.0.8. Correctifs open source : 7.1.3 et 7.0.9.
+
+**Pourquoi c'est important :** Une passkey ou clé clonée pourrait continuer à authentifier un utilisateur sans être rejetée.
+
+#### [Spring Security : déni de service via l'authentification Basic RSocket](https://spring.io/security/cve-2026-59331)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+CVE-2026-59331, gravité haute : BasicAuthenticationPayloadExchangeConverter alloue de la mémoire selon une longueur non validée, et une seule trame forgée peut épuiser la mémoire du serveur. Touche les applications utilisant le support RSocket avec le convertisseur par défaut. Correctifs open source : 7.1.3 et 7.0.9 ; les branches plus anciennes (6.x, 5.x) ne sont corrigées que pour le support entreprise.
+
+**Pourquoi c'est important :** Seules les applications RSocket exposées sont concernées, mais l'attaque ne demande ni privilège ni interaction.
+
+
 ## 2026-11-22
 
 **Résumé du jour.** Alerte critique : une faille d'exécution de code à distance (CVE-2026-59273) touche Spring Security via ELRequestMatcher ; mettre à jour vers 7.1.3 ou 7.0.9. Rien d'autre de vérifié aujourd'hui (dimanche).

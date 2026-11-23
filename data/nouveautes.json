@@ -1,16 +1,49 @@
 {
-  "date": "2026-11-22",
-  "resume_du_jour": "Alerte critique : une faille d'exécution de code à distance (CVE-2026-59273) touche Spring Security via ELRequestMatcher ; mettre à jour vers 7.1.3 ou 7.0.9. Rien d'autre de vérifié aujourd'hui (dimanche).",
+  "date": "2026-11-23",
+  "resume_du_jour": "Week-end calme côté publications. Spring Security publie deux correctifs à priorité haute (WebAuthn et RSocket) et Spring Data Elasticsearch corrige une injection SpEL. Spring Boot 4.0.10 est disponible. Les dates indiquées sont celles des sources.",
   "items": [
     {
-      "titre": "Spring Security : exécution de code à distance via ELRequestMatcher (CVE-2026-59273)",
-      "url": "https://spring.io/security/cve-2026-59273/",
+      "titre": "Spring Data Elasticsearch : injection SpEL dans les requêtes @Query",
+      "url": "https://spring.io/security/cve-2026-123886",
       "source": "spring.io",
       "date_publication": "2026-11-19",
       "theme": "securite",
-      "resume": "Faille critique (vecteur réseau, sans authentification) dans ELRequestMatcher de Spring Security : si une application lie une entrée externe à une propriété de ce type, elle est évaluée comme expression SpEL. Versions touchées : 7.1.0 à 7.1.2, 7.0.0 à 7.0.8, 6.5.0 à 6.5.12, 6.4.0 à 6.4.19, 5.8.0 à 5.8.28, 5.7.26 et antérieures. Correctifs open source : 7.1.3 et 7.0.9 ; les branches plus anciennes ne sont corrigées que via le support Enterprise.",
-      "importance": "Risque d'exécution de code à distance : vérifier l'usage d'ELRequestMatcher et mettre à jour les projets Spring Security.",
+      "resume": "CVE-2026-123886, gravité haute : dans les méthodes @Query en chaîne, les arguments sont insérés avant l'évaluation SpEL, ce qui permet d'exécuter du code avec une entrée non fiable. Versions touchées : 6.1.0 à 6.1.2 et 6.0.0 à 6.0.8. Correctifs : 6.1.3 et 6.0.9. À défaut, rejeter les entrées contenant #{ ou utiliser CriteriaQuery/NativeQuery.",
+      "importance": "Exécution de code possible sur les applications qui passent des saisies utilisateur à des @Query Elasticsearch.",
       "action": "corriger",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring Security : le compteur de signature WebAuthn n'est pas contrôlé",
+      "url": "https://spring.io/security/cve-2026-59330",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
+      "theme": "securite",
+      "resume": "CVE-2026-59330, gravité haute : un défaut interne empêche de transmettre le compteur stocké à la bibliothèque de vérification, si bien qu'un authentificateur cloné n'est pas détecté. Versions touchées : Spring Security 7.1.0 à 7.1.2 et 7.0.0 à 7.0.8. Correctifs open source : 7.1.3 et 7.0.9.",
+      "importance": "Une passkey ou clé clonée pourrait continuer à authentifier un utilisateur sans être rejetée.",
+      "action": "corriger",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring Security : déni de service via l'authentification Basic RSocket",
+      "url": "https://spring.io/security/cve-2026-59331",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
+      "theme": "securite",
+      "resume": "CVE-2026-59331, gravité haute : BasicAuthenticationPayloadExchangeConverter alloue de la mémoire selon une longueur non validée, et une seule trame forgée peut épuiser la mémoire du serveur. Touche les applications utilisant le support RSocket avec le convertisseur par défaut. Correctifs open source : 7.1.3 et 7.0.9 ; les branches plus anciennes (6.x, 5.x) ne sont corrigées que pour le support entreprise.",
+      "importance": "Seules les applications RSocket exposées sont concernées, mais l'attaque ne demande ni privilège ni interaction.",
+      "action": "corriger",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring Boot 4.0.10 disponible",
+      "url": "https://spring.io/blog/2026/11/20/spring-boot-4-0-10-available-now",
+      "source": "spring.io",
+      "date_publication": "2026-11-20",
+      "theme": "java",
+      "resume": "La version corrective 4.0.10 regroupe 97 corrections de bugs, améliorations de documentation et montées de dépendances, et se trouve sur Maven Central. L'annonce ne mentionne aucun CVE ; le détail est dans les notes de version GitHub.",
+      "importance": "Permet de rester sur la branche 4.0 à jour, en vérifiant que la version de Spring Security embarquée contient les correctifs de la semaine.",
+      "action": "migrer",
       "confiance": "elevee"
     }
   ]
