@@ -2,6 +2,19 @@
   "version": 1,
   "items": [
     {
+      "titre": "Spring AI 2.1 : validation humaine des appels d'outils, avec reprise après redémarrage",
+      "url": "https://spring.io/blog/2026/11/24/spring-ai-tool-call-confirmation-park-resume",
+      "source": "spring.io",
+      "date_publication": "2026-11-24",
+      "theme": "java",
+      "resume": "Spring AI 2.1 permet de marquer certains outils comme nécessitant une confirmation : la boucle d'appels s'interrompt uniquement sur ces appels et les renvoie à l'application. L'extension communautaire Spring AI Session Extensions (version 0.11.0, première version) enregistre cette pause dans le journal de session, de sorte qu'une autre instance puisse reprendre avec une décision d'autorisation ou de refus.",
+      "importance": "Utile aux équipes qui exposent des actions sensibles à des agents IA et veulent un circuit d'approbation durable.",
+      "action": "lire",
+      "confiance": "elevee",
+      "id": "a283193da833893e30acfbc218887b56ff5476ec",
+      "date_ajout": "2026-11-25"
+    },
+    {
       "titre": "Spring Boot 4.0.10 disponible",
       "url": "https://spring.io/blog/2026/11/20/spring-boot-4-0-10-available-now",
       "source": "spring.io",
@@ -471,6 +484,10 @@
     }
   ],
   "syntheses": [
+    {
+      "date": "2026-11-25",
+      "resume": "Journée calme : un seul élément retenu dans la fenêtre de 24 h. Spring AI 2.1 permet de mettre en pause une boucle d'appels d'outils pour obtenir une validation humaine, puis de la reprendre après un redémarrage. Aucune nouvelle alerte de sécurité Spring publiée depuis le 19 novembre ; inside.java et InfoQ n'étaient pas accessibles depuis cet environnement."
+    },
     {
       "date": "2026-11-23",
       "resume": "Week-end calme côté publications. Spring Security publie deux correctifs à priorité haute (WebAuthn et RSocket) et Spring Data Elasticsearch corrige une injection SpEL. Spring Boot 4.0.10 est disponible. Les dates indiquées sont celles des sources."
