@@ -3,6 +3,21 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-27
+
+**Résumé du jour.** Journée calme. Seul élément notable dans la fenêtre : un article du blog Spring sur l'API DecisionModel de Spring AI 2.1. Aucune alerte de sécurité nouvelle sur la période (les avis Spring du 19 novembre sont déjà hors fenêtre). Les sites openjdk.org et inside.java étaient inaccessibles depuis l'environnement d'exécution.
+
+
+### Java
+
+#### [Spring AI 2.1 : DecisionModel pour classifier, filtrer et juger avec probabilités](https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges)
+*spring.io · publié le 2026-11-26 · confiance : élevée · action : lire*
+
+Christian Tzolov présente l'API DecisionModel de Spring AI 2.1, une abstraction typée hors dialogue qui renvoie une réponse oui/non, un choix ou un score accompagné de probabilités. Elle cible la classification, les garde-fous et les évaluations par modèle juge.
+
+**Pourquoi c'est important :** Utile aux équipes qui intègrent des LLM dans des applications Spring et veulent des décisions typées et testables plutôt que du texte libre.
+
+
 ## 2026-11-25
 
 **Résumé du jour.** Journée calme : un seul élément retenu dans la fenêtre de 24 h. Spring AI 2.1 permet de mettre en pause une boucle d'appels d'outils pour obtenir une validation humaine, puis de la reprendre après un redémarrage. Aucune nouvelle alerte de sécurité Spring publiée depuis le 19 novembre ; inside.java et InfoQ n'étaient pas accessibles depuis cet environnement.
