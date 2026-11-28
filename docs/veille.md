@@ -3,6 +3,45 @@
 > Flux RSS : https://pogauh.github.io/veille_technologique/feed.xml
 
 
+## 2026-11-28
+
+**Résumé du jour.** Journée calme (samedi, semaine de Thanksgiving). Deux failles critiques de Spring Boot publiées le 19/11 n'étaient pas encore dans la veille : contournement d'autorisation sur les endpoints Actuator et désactivation de la sécurité par défaut sur Cloud Foundry. Corrigées en 4.0.10 et 4.1.3. Côté JVM, la JEP 545 (ZGC) cible JDK 28 pour accélérer le démarrage.
+
+
+### Java
+
+#### [Podcast Spring : l'IA et l'avenir des montées de version logicielles](https://spring.io/blog/2026/11/26/a-bootiful-podcast-cora-iberkleid)
+*spring.io · publié le 2026-11-26 · confiance : élevée · action : lire*
+
+Josh Long reçoit Cora Iberkleid pour discuter de l'impact de l'IA sur les mises à jour, les correctifs et la sécurité des logiciels. Sont abordés des outils déterministes comme OpenRewrite, la chaîne d'approvisionnement logicielle et les SBOM. Contenu d'opinion sous forme d'entretien.
+
+**Pourquoi c'est important :** Alimente la réflexion sur l'automatisation des migrations de versions Spring et Java.
+
+#### [JEP 545 : ZGC prépare la mémoire hors du chemin de démarrage dans JDK 28](https://www.infoq.com/news/2026/11/jep-545-jdk-28/)
+*infoq.com · publié le 2026-11-23 · confiance : moyenne · action : surveiller*
+
+Selon InfoQ, la JEP 545 confie la préparation de la mémoire du tas à des threads concurrents, plafonnés à 25 % du CPU, afin d'accélérer démarrage et warmup. Les gains annoncés (jusqu'à 38 % au démarrage) dépendent en partie d'une option de dimensionnement adaptatif du tas, désactivée par défaut. Chiffres relayés par une source secondaire, non vérifiés dans la JEP elle-même.
+
+**Pourquoi c'est important :** Peut réduire sensiblement le temps de démarrage des services Spring conteneurisés lorsque JDK 28 sera disponible (GA prévue en mars 2027).
+
+
+### Sécurité
+
+#### [Spring Boot : contournement d'autorisation sur les chemins Actuator (CVE-2026-59414)](https://spring.io/security/cve-2026-59414/)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+Les request matchers EndpointRequest et PathRequest peuvent gérer de façon incohérente la normalisation des chemins, laissant des chemins non protégés. Gravité critique. Versions touchées : 4.1.0 à 4.1.2, 4.0.0 à 4.0.9, 3.5.0 à 3.5.17, 3.0 à 3.4.18 et 2.7.35 et antérieures. Correctifs OSS : 4.0.10 et 4.1.3 ; les branches 3.x et 2.7 ne sont corrigées que sous support commercial.
+
+**Pourquoi c'est important :** Une application Spring Security protégeant Actuator via ces matchers peut exposer des endpoints sensibles sans authentification.
+
+#### [Spring Boot sur Cloud Foundry : sécurité servlet par défaut désactivée (CVE-2026-59411)](https://spring.io/security/cve-2026-59411/)
+*spring.io · publié le 2026-11-19 · confiance : élevée · action : corriger*
+
+L'autoconfiguration Cloud Foundry désactive la sécurité web par défaut des applications servlet utilisant Actuator. Gravité critique. Versions touchées : 4.1.0 à 4.1.2, 4.0.0 à 4.0.9, 3.5.0 à 3.5.17. Correctifs OSS : 4.0.10 et 4.1.3 ; 3.5.18 réservé au support commercial.
+
+**Pourquoi c'est important :** Concerne uniquement les déploiements Cloud Foundry sans configuration de sécurité personnalisée, mais l'impact y est direct.
+
+
 ## 2026-11-27
 
 **Résumé du jour.** Journée calme. Seul élément notable dans la fenêtre : un article du blog Spring sur l'API DecisionModel de Spring AI 2.1. Aucune alerte de sécurité nouvelle sur la période (les avis Spring du 19 novembre sont déjà hors fenêtre). Les sites openjdk.org et inside.java étaient inaccessibles depuis l'environnement d'exécution.

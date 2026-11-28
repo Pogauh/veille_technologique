@@ -1,15 +1,48 @@
 {
-  "date": "2026-11-27",
-  "resume_du_jour": "Journée calme. Seul élément notable dans la fenêtre : un article du blog Spring sur l'API DecisionModel de Spring AI 2.1. Aucune alerte de sécurité nouvelle sur la période (les avis Spring du 19 novembre sont déjà hors fenêtre). Les sites openjdk.org et inside.java étaient inaccessibles depuis l'environnement d'exécution.",
+  "date": "2026-11-28",
+  "resume_du_jour": "Journée calme (samedi, semaine de Thanksgiving). Deux failles critiques de Spring Boot publiées le 19/11 n'étaient pas encore dans la veille : contournement d'autorisation sur les endpoints Actuator et désactivation de la sécurité par défaut sur Cloud Foundry. Corrigées en 4.0.10 et 4.1.3. Côté JVM, la JEP 545 (ZGC) cible JDK 28 pour accélérer le démarrage.",
   "items": [
     {
-      "titre": "Spring AI 2.1 : DecisionModel pour classifier, filtrer et juger avec probabilités",
-      "url": "https://spring.io/blog/2026/11/26/spring-ai-decision-models-guardrails-judges",
+      "titre": "Spring Boot : contournement d'autorisation sur les chemins Actuator (CVE-2026-59414)",
+      "url": "https://spring.io/security/cve-2026-59414/",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
+      "theme": "securite",
+      "resume": "Les request matchers EndpointRequest et PathRequest peuvent gérer de façon incohérente la normalisation des chemins, laissant des chemins non protégés. Gravité critique. Versions touchées : 4.1.0 à 4.1.2, 4.0.0 à 4.0.9, 3.5.0 à 3.5.17, 3.0 à 3.4.18 et 2.7.35 et antérieures. Correctifs OSS : 4.0.10 et 4.1.3 ; les branches 3.x et 2.7 ne sont corrigées que sous support commercial.",
+      "importance": "Une application Spring Security protégeant Actuator via ces matchers peut exposer des endpoints sensibles sans authentification.",
+      "action": "corriger",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "Spring Boot sur Cloud Foundry : sécurité servlet par défaut désactivée (CVE-2026-59411)",
+      "url": "https://spring.io/security/cve-2026-59411/",
+      "source": "spring.io",
+      "date_publication": "2026-11-19",
+      "theme": "securite",
+      "resume": "L'autoconfiguration Cloud Foundry désactive la sécurité web par défaut des applications servlet utilisant Actuator. Gravité critique. Versions touchées : 4.1.0 à 4.1.2, 4.0.0 à 4.0.9, 3.5.0 à 3.5.17. Correctifs OSS : 4.0.10 et 4.1.3 ; 3.5.18 réservé au support commercial.",
+      "importance": "Concerne uniquement les déploiements Cloud Foundry sans configuration de sécurité personnalisée, mais l'impact y est direct.",
+      "action": "corriger",
+      "confiance": "elevee"
+    },
+    {
+      "titre": "JEP 545 : ZGC prépare la mémoire hors du chemin de démarrage dans JDK 28",
+      "url": "https://www.infoq.com/news/2026/11/jep-545-jdk-28/",
+      "source": "infoq.com",
+      "date_publication": "2026-11-23",
+      "theme": "java",
+      "resume": "Selon InfoQ, la JEP 545 confie la préparation de la mémoire du tas à des threads concurrents, plafonnés à 25 % du CPU, afin d'accélérer démarrage et warmup. Les gains annoncés (jusqu'à 38 % au démarrage) dépendent en partie d'une option de dimensionnement adaptatif du tas, désactivée par défaut. Chiffres relayés par une source secondaire, non vérifiés dans la JEP elle-même.",
+      "importance": "Peut réduire sensiblement le temps de démarrage des services Spring conteneurisés lorsque JDK 28 sera disponible (GA prévue en mars 2027).",
+      "action": "surveiller",
+      "confiance": "moyenne"
+    },
+    {
+      "titre": "Podcast Spring : l'IA et l'avenir des montées de version logicielles",
+      "url": "https://spring.io/blog/2026/11/26/a-bootiful-podcast-cora-iberkleid",
       "source": "spring.io",
       "date_publication": "2026-11-26",
       "theme": "java",
-      "resume": "Christian Tzolov présente l'API DecisionModel de Spring AI 2.1, une abstraction typée hors dialogue qui renvoie une réponse oui/non, un choix ou un score accompagné de probabilités. Elle cible la classification, les garde-fous et les évaluations par modèle juge.",
-      "importance": "Utile aux équipes qui intègrent des LLM dans des applications Spring et veulent des décisions typées et testables plutôt que du texte libre.",
+      "resume": "Josh Long reçoit Cora Iberkleid pour discuter de l'impact de l'IA sur les mises à jour, les correctifs et la sécurité des logiciels. Sont abordés des outils déterministes comme OpenRewrite, la chaîne d'approvisionnement logicielle et les SBOM. Contenu d'opinion sous forme d'entretien.",
+      "importance": "Alimente la réflexion sur l'automatisation des migrations de versions Spring et Java.",
       "action": "lire",
       "confiance": "elevee"
     }
